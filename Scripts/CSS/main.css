@@ -1,11 +1,11 @@
 @font-face {
     font-family: JetBrainsMono;
-    src: url(/Assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+    src: url(../../Assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: RobotoCondensed;
-    src: url(/Assets/fonts/RobotoCondensed-VariableFont_wght.ttf);
+    src: url(../../Assets/fonts/RobotoCondensed-VariableFont_wght.ttf);
 }
 
 .main-first {
