@@ -1,0 +1,197 @@
+/* ================================
+   FONTS
+================================ */
+@font-face {
+    font-family: JetBrainsMono;
+    src: url(/Assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: RobotoCondensed;
+    src: url(/Assets/fonts/RobotoCondensed-VariableFont_wght.ttf);
+    
+}
+
+
+/* ================================
+   BASE / RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+    font-family: RobotoCondensed, Arial, sans-serif;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+header {
+    padding: 10px 20px;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;        /* wraps to next line on small screens */
+    gap: 10px;
+}
+
+.header-name {
+    font-family: RobotoCondensed, Arial, sans-serif;
+    font-size: 15px;
+    color: rgb(68, 152, 114);
+    font-weight: normal;
+}
+
+#title-name {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+/* ================================
+   HEADER RIGHT (icons + button)
+================================ */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;        /* wraps on very small screens */
+}
+
+
+/* ================================
+   ICONS
+================================ */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-icons a {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    line-height: 0;
+}
+
+.header-icon {
+    height: 30px;
+    width: 30px;
+    background-color: rgb(68, 152, 114);
+    transition: all 0.3s ease;
+}
+
+.header-icon-round {
+    border-radius: 50%;
+}
+
+.header-icon-square {
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.header-icon-square:hover {
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+}
+
+
+.header-icon:hover {
+    height: 35px;
+    width: 35px;
+}
+
+
+/* ================================
+   BUTTONS
+================================ */
+#Resume {
+    font-family: RobotoCondensed, Arial, sans-serif;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(68, 152, 114);
+    color: rgb(68, 152, 114);
+    background-color: rgb(36, 36, 36);
+    height: 35px;
+    width: 80px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#Resume:hover {
+    background-color: rgb(68, 152, 114);
+    color: rgb(36, 36, 36);
+}
+
+.header-buttons {
+    margin-right: 200px;
+}
+
+
+/* ================================
+   HR
+================================ */
+hr {
+    border: none;
+    background-color: rgb(68, 152, 114);
+    height: 2px;
+    margin-top: 10px;
+}
+
+
+/* ================================
+   RESPONSIVE — TABLET (max 768px)
+================================ */
+@media (max-width: 768px) {
+    .header-title {
+        flex-direction: column;     /* stack name and right section */
+        align-items: flex-start;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .header-name {
+        font-size: 13px;
+    }
+}
+
+
+/* ================================
+   RESPONSIVE — MOBILE (max 480px)
+================================ */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 12px;
+    }
+
+    .header-right {
+        flex-direction: column;     /* stack icons and button */
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-name {
+        font-size: 12px;
+    }
+
+    #Resume {
+        width: 100%;                /* full width button on mobile */
+    }
+}
