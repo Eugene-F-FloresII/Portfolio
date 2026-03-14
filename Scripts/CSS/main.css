@@ -8,39 +8,53 @@
     src: url(../../Assets/fonts/RobotoCondensed-VariableFont_wght.ttf);
 }
 
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
 .main-first {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: stretch;
     margin-top: 20px;
     margin-bottom: 40px;
-    gap: 60px;
-    flex-wrap: wrap; /* Allows stacking on mobile */
-    padding: 0 20px;
+    gap: 24px;
+    flex-wrap: wrap;
 
 }
 
 .main-second {
 
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: stretch;
     margin-top: 20px;
     margin-bottom: 40px;
-    gap: 60px;
-    flex-wrap: wrap; /* Allows stacking on mobile */
-    padding: 0 20px;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.main-third {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 .Skills-border {
     border: solid;
     border-color: rgb(68, 152, 114);
     border-radius: 10px;
-    height: 600px; /* Made it match Experiences height for balance, or keep it 300px if you prefer */
+    height: 600px;
     width: 100%;
-    flex: 1; /* Allows it to take up remaining space */
-    min-width: 300px; /* Prevents it from getting too squished */
-    max-width: 500px;
+    flex: 1 1 320px;
+    min-width: 280px;
+    max-width: 380px;
     box-sizing: border-box;
 }
 .Skills-main {
@@ -82,10 +96,11 @@
 
 .Skills-ol {
     display: flex;
+    justify-content: center;
     margin-top: 10px;
-    margin-left: 40px;
+    margin-left: 0;
     list-style-type: none;
-    gap: 20px; /* added gap to prevent images from touching */
+    gap: 20px;
 }
 
 .li-img {
@@ -107,11 +122,10 @@
     border-radius: 10px;
     height: 600px;
     width: 100%;
-    flex: 2; /* Takes up more space than skills */
-    min-width: 350px;
-    max-width: 700px;
+    flex: 1 1 620px;
+    min-width: 320px;
+    max-width: 760px;
     box-sizing: border-box;
-    margin-left: 50px;
 }
 
 .Experiences-main {
@@ -181,11 +195,10 @@
     border-radius: 10px;
     height: 400px;
     width: 100%;
-    flex: 2; /* Takes up more space than skills */
-    min-width: 350px;
-    max-width: 700px;
+    flex: 1 1 620px;
+    min-width: 320px;
+    max-width: 760px;
     box-sizing: border-box;
-    margin-left: 50px;
     margin-top: 30px;
 }
 
@@ -212,6 +225,8 @@
     margin-bottom: 30px;
     margin-right: 30px;
     display: flex;
+    align-items: center;
+    gap: 18px;
 }
 
 .Introduction-name {
@@ -236,7 +251,7 @@
     text-align: justify;
     font-family: RobotoCondensed;
     color: whitesmoke;
-    line-height: 35px;
+    line-height: 1.6;
 
 }
 
@@ -252,10 +267,10 @@
     border-color: rgb(68, 152, 114);
     border-radius: 10px;
     height: 400px;
-    width: 34%;
-    flex: none; /* Prevents flex from overriding the width */
-    min-width: 350px;
-    max-width: 700px;
+    width: 100%;
+    flex: 1 1 320px;
+    min-width: 280px;
+    max-width: 380px;
     box-sizing: border-box;
     margin-top: 30px;
 }
@@ -278,4 +293,104 @@
     font-family: JetBrainsMono;
     color: whitesmoke;
     line-height: 40px;
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 0 16px 32px;
+    }
+
+    .main-first,
+    .main-second,
+    .main-third {
+        gap: 18px;
+    }
+
+    .Experiences-border,
+    .Skills-border,
+    .Introduction-border,
+    .Showcase-border {
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .Experiences-border,
+    .Skills-border,
+    .Introduction-border,
+    .Showcase-border {
+        height: auto;
+        margin-top: 0;
+    }
+
+    .Experiences-lists-container,
+    .Skills-list {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+    }
+
+    .Introduction-title-border {
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .Introduction-title,
+    .Introduction-quote {
+        text-align: center;
+    }
+
+    .Experiences-list {
+        text-align: left;
+    }
+
+    .Showcase-list-holder {
+        margin: 10px 20px 20px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 12px 24px;
+    }
+
+    .main-first,
+    .main-second,
+    .main-third {
+        margin-top: 14px;
+        margin-bottom: 26px;
+        gap: 14px;
+    }
+
+    .Experiences-listTitle {
+        font-size: 16px;
+    }
+
+    .Experiences-list {
+        margin-left: 20px;
+        font-size: 14px;
+    }
+
+    .Introduction-name {
+        font-size: 22px;
+    }
+
+    .Introduction-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .li-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .li-img:hover {
+        width: 140px;
+        height: 140px;
+    }
 }

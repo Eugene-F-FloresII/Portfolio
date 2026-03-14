@@ -1,0 +1,360 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 2012 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(Portfolio CSS Changes Guide \(Beginner-Friendly\)) Tj
+T*
+( ) Tj
+T*
+(This guide explains every layout and styling update made to your portfolio so you can learn the resp) Tj
+T*
+( ) Tj
+T*
+(What Was Fixed) Tj
+T*
+( ) Tj
+T*
+(1. Desktop spacing felt uneven with too much open space on the right side.) Tj
+T*
+(2. Header and body layout looked uneven on phones.) Tj
+T*
+(3. There was no entry transition when opening the website.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(1\) Centering the layout on large screens) Tj
+T*
+( ) Tj
+T*
+(Problem) Tj
+T*
+(Your sections were anchored to the left using justify-content: flex-start, and some cards had manual) Tj
+T*
+( ) Tj
+T*
+(Fix) Tj
+T*
+( ) Tj
+T*
+(- Added a centered container for all page content:) Tj
+T*
+(  - main { max-width: 1200px; margin: 0 auto; }) Tj
+T*
+(- Updated section rows \(.main-first, .main-second, .main-third\) to:) Tj
+T*
+(  - justify-content: center) Tj
+T*
+(  - flex-wrap: wrap) Tj
+T*
+(  - a cleaner, consistent gap) Tj
+T*
+(- Removed manual left-push margins on main cards.) Tj
+T*
+( ) Tj
+T*
+(Why it works) Tj
+T*
+(max-width prevents super-wide stretching, and margin: 0 auto centers the whole content block. Center) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(2\) Making the header and body responsive for phones) Tj
+T*
+( ) Tj
+T*
+(Header improvements) Tj
+T*
+( ) Tj
+T*
+(Problem) Tj
+T*
+(- Header spacing relied on hard-coded margins.) Tj
+T*
+(- Buttons used duplicate IDs \(id="Resume" repeated\), which is invalid HTML.) Tj
+T*
+( ) Tj
+T*
+(Fix) Tj
+T*
+(- Replaced duplicate button IDs with a reusable class: .header-button.) Tj
+T*
+(- Renamed buttons to distinct labels:) Tj
+T*
+(  - Resume) Tj
+T*
+(  - Projects) Tj
+T*
+(  - Contact) Tj
+T*
+(- Converted header groups into flexible rows that wrap naturally.) Tj
+T*
+(- Added tablet and mobile rules so title, buttons, and icons align evenly.) Tj
+T*
+( ) Tj
+T*
+(Why it works) Tj
+T*
+(Classes are reusable and valid for multiple elements. Flex wrapping and mobile breakpoints let compo) Tj
+T*
+( ) Tj
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2078 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(Body/card improvements) Tj
+T*
+( ) Tj
+T*
+(Problem) Tj
+T*
+(- Several cards used fixed heights and strict minimum widths.) Tj
+T*
+(- On smaller devices this can create cramped content, uneven spacing, and overflow.) Tj
+T*
+( ) Tj
+T*
+(Fix) Tj
+T*
+(- Standardized card sizing with responsive flex values.) Tj
+T*
+(- On mobile \(max-width: 768px\), switched major cards to height: auto so content defines the height.) Tj
+T*
+(- Relaxed strict min-width behavior at smaller breakpoints.) Tj
+T*
+(- Adjusted text/image sizing and spacing for smaller screens.) Tj
+T*
+(- Improved stacking for intro section and list sections.) Tj
+T*
+( ) Tj
+T*
+(Why it works) Tj
+T*
+(Responsive layouts should prioritize fluid sizing. height: auto on mobile avoids clipping, and small) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(3\) Adding a simple fade-in on page load) Tj
+T*
+( ) Tj
+T*
+(Problem) Tj
+T*
+(The page appeared instantly without transition.) Tj
+T*
+( ) Tj
+T*
+(Fix) Tj
+T*
+(- Added a keyframe animation to the body:) Tj
+T*
+(  - starts at opacity: 0) Tj
+T*
+(  - ends at opacity: 1) Tj
+T*
+(  - duration: 0.7s) Tj
+T*
+(- Added reduced-motion support:) Tj
+T*
+(  - @media \(prefers-reduced-motion: reduce\) disables animation and transitions.) Tj
+T*
+( ) Tj
+T*
+(Why it works) Tj
+T*
+(Fade-in adds a gentle first impression. Reduced-motion support keeps the experience accessible for u) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(File-by-file changes) Tj
+T*
+( ) Tj
+T*
+(index.html) Tj
+T*
+(- Updated header buttons from duplicate IDs to class-based buttons.) Tj
+T*
+(- Changed labels to Resume, Projects, and Contact.) Tj
+T*
+( ) Tj
+T*
+(Scripts/CSS/header.css) Tj
+T*
+(- Added page fade-in animation and keyframes.) Tj
+T*
+(- Centered header container with max width.) Tj
+T*
+(- Refactored button styling from #Resume to .header-button.) Tj
+T*
+(- Improved responsive behavior for tablet and mobile.) Tj
+T*
+(- Added reduced-motion fallback.) Tj
+T*
+( ) Tj
+T*
+(Scripts/CSS/main.css) Tj
+T*
+(- Added centered main container with max width.) Tj
+T*
+(- Centered row layouts and standardized spacing.) Tj
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1803 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(- Removed manual left offsets from bordered cards.) Tj
+T*
+(- Improved card width behavior for large screens.) Tj
+T*
+(- Added responsive breakpoints for tablet/phone.) Tj
+T*
+(- Switched card heights to auto on mobile.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(Quick CSS Concepts You Just Used) Tj
+T*
+( ) Tj
+T*
+(- max-width + margin: 0 auto = centered content block on large screens.) Tj
+T*
+(- display: flex + flex-wrap: wrap = responsive row that can stack naturally.) Tj
+T*
+(- flex: 1 1 320px = grow and shrink, with a preferred base width.) Tj
+T*
+(- Media queries \(@media\) = apply rules only for certain viewport widths.) Tj
+T*
+(- height: auto = let content control the box height.) Tj
+T*
+(- @keyframes + animation = create entry transitions.) Tj
+T*
+(- prefers-reduced-motion = accessibility-friendly motion handling.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(How to tweak this later \(safe edits\)) Tj
+T*
+( ) Tj
+T*
+(If you want to customize the look further:) Tj
+T*
+( ) Tj
+T*
+(1. Wider/narrower desktop content:) Tj
+T*
+(   - edit main { max-width: 1200px; } in Scripts/CSS/main.css.) Tj
+T*
+(2. More/less spacing between cards:) Tj
+T*
+(   - edit gap in .main-first, .main-second, .main-third.) Tj
+T*
+(3. Faster/slower fade-in:) Tj
+T*
+(   - edit animation: pageFadeIn 0.7s ... in Scripts/CSS/header.css.) Tj
+T*
+(4. Earlier/later phone layout switch:) Tj
+T*
+(   - adjust values in media queries \(900px, 768px, 480px\).) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(Final outcome) Tj
+T*
+( ) Tj
+T*
+(You now have:) Tj
+T*
+(- A centered, balanced desktop layout.) Tj
+T*
+(- A cleaner and more even phone/tablet layout.) Tj
+T*
+(- A simple and accessible page-entry fade-in.) Tj
+T*
+( ) Tj
+T*
+(These are core responsive CSS patterns used in real-world production websites.) Tj
+T*
+( ) Tj
+
+ET
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000323 00000 n 
+0000002387 00000 n 
+0000002513 00000 n 
+0000004643 00000 n 
+0000004769 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6624
+%%EOF
