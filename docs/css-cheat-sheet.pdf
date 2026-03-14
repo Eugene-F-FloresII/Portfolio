@@ -1,0 +1,1066 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R] /Count 9 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
+endobj
+5 0 obj
+<< /Length 1666 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(CSS Cheat Sheet for Your Portfolio \(Beginner to Practical\)) Tj
+T*
+( ) Tj
+T*
+(Use this as a study guide and quick reference while editing your site.) Tj
+T*
+( ) Tj
+T*
+(How to read this cheat sheet) Tj
+T*
+( ) Tj
+T*
+(- [IMPORTANT] Each section has a concept, when to use it, and an example.) Tj
+T*
+(- [IMPORTANT] Copy examples into your CSS and tweak values to learn faster.) Tj
+T*
+(- [TIP] Change one value at a time, refresh, and compare the result.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(1\) Selectors \(How CSS chooses elements\)) Tj
+T*
+( ) Tj
+T*
+(Core selector types) Tj
+T*
+( ) Tj
+T*
+(- Element selector: targets all elements of that tag.) Tj
+T*
+(  - Example: p { color: white; }) Tj
+T*
+(- Class selector: reusable style for many elements.) Tj
+T*
+(  - Example: .header-button { border-radius: 6px; }) Tj
+T*
+(- ID selector: one unique element only.) Tj
+T*
+(  - Example: #title-name { font-weight: bold; }) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] Prefer classes for reusable styles. Avoid duplicate IDs.) Tj
+T*
+( ) Tj
+T*
+(Selector combinations) Tj
+T*
+( ) Tj
+T*
+(- Descendant selector: .header-icons a means links inside .header-icons.) Tj
+T*
+(- Multiple selectors: .card, .panel { padding: 16px; }) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.card h2 {) Tj
+T*
+(    font-size: 24px;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.card,) Tj
+T*
+(.panel {) Tj
+T*
+(    border: 1px solid rgb\(68, 152, 114\);) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(2\) The Box Model \(Why spacing looks the way it does\)) Tj
+T*
+( ) Tj
+T*
+(Every element is:) Tj
+T*
+( ) Tj
+T*
+(1. Content) Tj
+T*
+(2. Padding \(inside space\)) Tj
+T*
+(3. Border) Tj
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 1245 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(4. Margin \(outside space\)) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] box-sizing: border-box; makes width/height easier to reason about.) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(* {) Tj
+T*
+(    box-sizing: border-box;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.card {) Tj
+T*
+(    width: 320px;) Tj
+T*
+(    padding: 16px;) Tj
+T*
+(    border: 2px solid rgb\(68, 152, 114\);) Tj
+T*
+(    margin: 12px;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(3\) Sizing Units \(px, %, rem, vw\)) Tj
+T*
+( ) Tj
+T*
+(- px: fixed size \(good for borders, icon sizes\).) Tj
+T*
+(- %: relative to parent size.) Tj
+T*
+(- rem: relative to root font size \(great for scalable typography\).) Tj
+T*
+(- vw / vh: relative to viewport.) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.title {) Tj
+T*
+(    font-size: 1.5rem;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.container {) Tj
+T*
+(    width: 90%;) Tj
+T*
+(    max-width: 1200px;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.hero {) Tj
+T*
+(    min-height: 60vh;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(4\) Flexbox \(Main tool for responsive rows/columns\)) Tj
+T*
+( ) Tj
+T*
+(Why Flexbox) Tj
+T*
+( ) Tj
+T*
+(Use Flexbox when aligning items in one direction \(row or column\).) Tj
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1276 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+( ) Tj
+T*
+(Important properties) Tj
+T*
+( ) Tj
+T*
+(- display: flex) Tj
+T*
+(- justify-content: horizontal distribution in row mode) Tj
+T*
+(- align-items: vertical alignment in row mode) Tj
+T*
+(- flex-wrap: wrap: allows next line when space is tight) Tj
+T*
+(- gap: clean spacing between items) Tj
+T*
+( ) Tj
+T*
+(Example \(desktop row that wraps on mobile\):) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.main-row {) Tj
+T*
+(    display: flex;) Tj
+T*
+(    justify-content: center;) Tj
+T*
+(    align-items: stretch;) Tj
+T*
+(    flex-wrap: wrap;) Tj
+T*
+(    gap: 24px;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(Understanding flex: 1 1 320px) Tj
+T*
+( ) Tj
+T*
+(- First 1: can grow) Tj
+T*
+(- Second 1: can shrink) Tj
+T*
+(- 320px: preferred base width) Tj
+T*
+( ) Tj
+T*
+(Example card sizing:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.card-large {) Tj
+T*
+(    flex: 1 1 620px;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.card-small {) Tj
+T*
+(    flex: 1 1 320px;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(5\) Centering Layout on Large Screens) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] This is the pattern you used in your portfolio.) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(main {) Tj
+T*
+(    max-width: 1200px;) Tj
+T*
+(    margin: 0 auto;) Tj
+T*
+(    padding: 0 20px;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1298 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+( ) Tj
+T*
+(Why it works:) Tj
+T*
+( ) Tj
+T*
+(- max-width stops over-stretching on very wide monitors.) Tj
+T*
+(- margin: 0 auto centers the block.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(6\) Responsive Design with Media Queries) Tj
+T*
+( ) Tj
+T*
+(Use breakpoints to adapt layout by screen size.) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(/ Tablet /) Tj
+T*
+(@media \(max-width: 768px\) {) Tj
+T*
+(    .header-title {) Tj
+T*
+(        flex-direction: column;) Tj
+T*
+(        align-items: center;) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(/ Phone /) Tj
+T*
+(@media \(max-width: 480px\) {) Tj
+T*
+(    .header-button {) Tj
+T*
+(        min-width: 120px;) Tj
+T*
+(        font-size: 14px;) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] Start desktop-first or mobile-first, but be consistent.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(7\) Height Behavior: Fixed vs Auto) Tj
+T*
+( ) Tj
+T*
+(- Fixed height: stable box size but can clip content.) Tj
+T*
+(- height: auto: content decides height \(best for phones most of the time\).) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.card {) Tj
+T*
+(    height: 600px;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(@media \(max-width: 768px\) {) Tj
+T*
+(    .card {) Tj
+T*
+(        height: auto;) Tj
+T*
+(    }) Tj
+
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 1217 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] Use fixed heights carefully for text-heavy sections.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(8\) Typography Basics) Tj
+T*
+( ) Tj
+T*
+(Useful properties:) Tj
+T*
+( ) Tj
+T*
+(- font-family) Tj
+T*
+(- font-size) Tj
+T*
+(- font-weight) Tj
+T*
+(- line-height) Tj
+T*
+(- letter-spacing) Tj
+T*
+(- text-align) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.body-copy {) Tj
+T*
+(    font-family: RobotoCondensed, Arial, sans-serif;) Tj
+T*
+(    font-size: 16px;) Tj
+T*
+(    line-height: 1.6;) Tj
+T*
+(    color: whitesmoke;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+([TIP] For readable paragraphs, line-height: 1.5 to 1.8 is usually comfortable.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(9\) Colors and Reuse with CSS Variables) Tj
+T*
+( ) Tj
+T*
+(Instead of repeating color values, define variables once.) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(:root {) Tj
+T*
+(    --bg: rgb\(36, 36, 36\);) Tj
+T*
+(    --accent: rgb\(68, 152, 114\);) Tj
+T*
+(    --text-soft: rgb\(187, 205, 197\);) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(body {) Tj
+T*
+(    background: var\(--bg\);) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.title {) Tj
+T*
+(    color: var\(--text-soft\);) Tj
+
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 1260 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] Variables make theme updates much faster.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(10\) Hover Effects and Transitions) Tj
+T*
+( ) Tj
+T*
+(Transitions make property changes smooth.) Tj
+T*
+( ) Tj
+T*
+(Example:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.header-button {) Tj
+T*
+(    transition: all 0.3s ease;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(.header-button:hover {) Tj
+T*
+(    background-color: rgb\(68, 152, 114\);) Tj
+T*
+(    color: rgb\(36, 36, 36\);) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+([TIP] Keep transitions short \(0.2s to 0.35s\) for responsive feel.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(11\) Keyframes Animation \(Page Fade-In\)) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(body {) Tj
+T*
+(    opacity: 0;) Tj
+T*
+(    animation: pageFadeIn 0.7s ease-out forwards;) Tj
+T*
+(}) Tj
+T*
+( ) Tj
+T*
+(@keyframes pageFadeIn {) Tj
+T*
+(    from { opacity: 0; }) Tj
+T*
+(    to { opacity: 1; }) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(forwards keeps final state \(opacity: 1\) after animation ends.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(12\) Accessibility: Reduced Motion) Tj
+T*
+( ) Tj
+T*
+([IMPORTANT] Always provide motion fallback.) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(@media \(prefers-reduced-motion: reduce\) {) Tj
+
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 1229 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(    body {) Tj
+T*
+(        animation: none;) Tj
+T*
+(        opacity: 1;) Tj
+T*
+(    }) Tj
+T*
+( ) Tj
+T*
+(    .header-button,) Tj
+T*
+(    .header-icon {) Tj
+T*
+(        transition: none;) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(13\) Common Mistakes and Fixes) Tj
+T*
+( ) Tj
+T*
+(1. Too much empty space on one side) Tj
+T*
+(   - Check: max-width, margin: 0 auto, justify-content) Tj
+T*
+(2. Layout breaks on phone) Tj
+T*
+(   - Check: min-width, fixed height, missing flex-wrap) Tj
+T*
+(3. Buttons/icons far apart when stacked) Tj
+T*
+(   - Check: flex-grow, gap, width rules) Tj
+T*
+(4. Hover effect feels jumpy) Tj
+T*
+(   - Add/adjust transition) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(14\) Mini Practice Tasks \(Hands-on\)) Tj
+T*
+( ) Tj
+T*
+(Try these in your own CSS:) Tj
+T*
+( ) Tj
+T*
+(Task A: Make layout wider) Tj
+T*
+( ) Tj
+T*
+(Change:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(main { max-width: 1200px; }) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(To:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(main { max-width: 1320px; }) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(Observe: more horizontal room on desktop.) Tj
+T*
+( ) Tj
+T*
+(Task B: Tighten card spacing) Tj
+T*
+( ) Tj
+T*
+(Change:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 1278 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(.main-first,) Tj
+T*
+(.main-second,) Tj
+T*
+(.main-third { gap: 24px; }) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(To:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.main-first,) Tj
+T*
+(.main-second,) Tj
+T*
+(.main-third { gap: 16px; }) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(Observe: cards sit closer together.) Tj
+T*
+( ) Tj
+T*
+(Task C: Slower page fade) Tj
+T*
+( ) Tj
+T*
+(Change:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(animation: pageFadeIn 0.7s ease-out forwards;) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(To:) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(animation: pageFadeIn 1.1s ease-out forwards;) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(Observe: softer entrance.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(15\) Fast Troubleshooting Checklist) Tj
+T*
+( ) Tj
+T*
+(- [IMPORTANT] Is the element using the right selector \(class vs ID\)?) Tj
+T*
+(- [IMPORTANT] Is there a media query overriding your style?) Tj
+T*
+(- [IMPORTANT] Is fixed width/height causing overflow?) Tj
+T*
+(- [IMPORTANT] Are flex items allowed to wrap?) Tj
+T*
+(- [IMPORTANT] Are margins creating fake alignment issues?) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(16\) Reference Snippets You Can Reuse) Tj
+T*
+( ) Tj
+T*
+(Responsive card grid) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.row {) Tj
+T*
+(    display: flex;) Tj
+T*
+(    flex-wrap: wrap;) Tj
+T*
+(    gap: 20px;) Tj
+
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 874 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
+(}) Tj
+T*
+( ) Tj
+T*
+(.card {) Tj
+T*
+(    flex: 1 1 300px;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(Center everything in a row) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(.row-center {) Tj
+T*
+(    display: flex;) Tj
+T*
+(    justify-content: center;) Tj
+T*
+(    align-items: center;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(Safe image sizing) Tj
+T*
+( ) Tj
+T*
+(```css) Tj
+T*
+(img {) Tj
+T*
+(    max-width: 100%;) Tj
+T*
+(    height: auto;) Tj
+T*
+(}) Tj
+T*
+(```) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(Final notes) Tj
+T*
+( ) Tj
+T*
+(You are now using practical CSS patterns that real production sites use:) Tj
+T*
+( ) Tj
+T*
+(- centered containers) Tj
+T*
+(- responsive flex layouts) Tj
+T*
+(- breakpoint-based refinements) Tj
+T*
+(- accessible animation) Tj
+T*
+( ) Tj
+T*
+(Keep experimenting by changing one variable at a time and observing the result.) Tj
+T*
+( ) Tj
+
+ET
+endstream
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000169 00000 n 
+0000000239 00000 n 
+0000000365 00000 n 
+0000002083 00000 n 
+0000002209 00000 n 
+0000003506 00000 n 
+0000003632 00000 n 
+0000004960 00000 n 
+0000005088 00000 n 
+0000006439 00000 n 
+0000006567 00000 n 
+0000007837 00000 n 
+0000007965 00000 n 
+0000009278 00000 n 
+0000009406 00000 n 
+0000010688 00000 n 
+0000010816 00000 n 
+0000012147 00000 n 
+0000012275 00000 n 
+trailer
+<< /Size 22 /Root 1 0 R >>
+startxref
+13201
+%%EOF

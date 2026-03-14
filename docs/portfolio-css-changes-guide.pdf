@@ -3,7 +3,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R] /Count 3 >>
+<< /Type /Pages /Kids [4 0 R 6 0 R 8 0 R 10 0 R 12 0 R] /Count 5 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
@@ -12,7 +12,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 5 0 R >>
 endobj
 5 0 obj
-<< /Length 2012 >>
+<< /Length 2391 >>
 stream
 BT
 /F1 11 Tf
@@ -26,6 +26,26 @@ T*
 T*
 ( ) Tj
 T*
+(Quick Highlights \(Read This First\)) Tj
+T*
+( ) Tj
+T*
+(- [IMPORTANT] main { max-width: 1200px; margin: 0 auto; } is the core centering rule for desktop.) Tj
+T*
+(- [IMPORTANT] height: auto on mobile cards prevents cramped content and uneven sections.) Tj
+T*
+(- [IMPORTANT] flex-wrap: wrap lets rows stack naturally when screen width gets smaller.) Tj
+T*
+(- [IMPORTANT] Use classes \(like .header-button\) for repeated elements, not duplicate IDs.) Tj
+T*
+(- [IMPORTANT] Keep prefers-reduced-motion so fade animations remain accessibility-friendly.) Tj
+T*
+(- [IMPORTANT] The projects list now uses JS to show exactly 5 cards before scrolling.) Tj
+T*
+(- [TWEAK FAST] To tighten layout quickly, edit gap values first before changing structure.) Tj
+T*
+( ) Tj
+T*
 (What Was Fixed) Tj
 T*
 ( ) Tj
@@ -35,6 +55,8 @@ T*
 (2. Header and body layout looked uneven on phones.) Tj
 T*
 (3. There was no entry transition when opening the website.) Tj
+T*
+(4. The projects list could grow too long and push the page too much.) Tj
 T*
 ( ) Tj
 T*
@@ -78,6 +100,14 @@ T*
 T*
 ( ) Tj
 T*
+(Keep in mind) Tj
+T*
+(- [IMPORTANT] If desktop looks too wide again, check max-width first.) Tj
+T*
+(- [IMPORTANT] If cards hug one side, check justify-content and any manual margins.) Tj
+T*
+( ) Tj
+T*
 (---) Tj
 T*
 ( ) Tj
@@ -91,7 +121,20 @@ T*
 ( ) Tj
 T*
 (Problem) Tj
-T*
+
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 2446 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
 (- Header spacing relied on hard-coded margins.) Tj
 T*
 (- Buttons used duplicate IDs \(id="Resume" repeated\), which is invalid HTML.) Tj
@@ -114,27 +157,32 @@ T*
 T*
 (- Added tablet and mobile rules so title, buttons, and icons align evenly.) Tj
 T*
+(- Added a follow-up header spacing pass to prevent large vertical gaps on tablet/mobile by:) Tj
+T*
+(  - reducing row gap in .header-title) Tj
+T*
+(  - stopping header groups from flex-growing \(flex: 0 0 auto\)) Tj
+T*
+(  - keeping mobile header groups at width: auto so they stay compact) Tj
+T*
 ( ) Tj
 T*
 (Why it works) Tj
 T*
 (Classes are reusable and valid for multiple elements. Flex wrapping and mobile breakpoints let compo) Tj
 T*
+(The compact spacing pass prevents controls from being pushed far apart when the header stacks.) Tj
+T*
 ( ) Tj
-
-ET
-endstream
-endobj
-6 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 7 0 R >>
-endobj
-7 0 obj
-<< /Length 2078 >>
-stream
-BT
-/F1 11 Tf
-50 800 Td
-14 TL
+T*
+(Keep in mind) Tj
+T*
+(- [IMPORTANT] Duplicate IDs can cause unexpected styling and JS behavior.) Tj
+T*
+(- [IMPORTANT] On stacked layouts, avoid flex-grow unless you intentionally want large spacing.) Tj
+T*
+( ) Tj
+T*
 (Body/card improvements) Tj
 T*
 ( ) Tj
@@ -167,6 +215,14 @@ T*
 T*
 ( ) Tj
 T*
+(Keep in mind) Tj
+T*
+(- [IMPORTANT] Fixed heights are okay for desktop sections, but usually risky on mobile.) Tj
+T*
+(- [IMPORTANT] Strict min-width values can break small-screen layouts.) Tj
+T*
+( ) Tj
+T*
 (---) Tj
 T*
 ( ) Tj
@@ -182,7 +238,20 @@ T*
 ( ) Tj
 T*
 (Fix) Tj
-T*
+
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 2362 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
 (- Added a keyframe animation to the body:) Tj
 T*
 (  - starts at opacity: 0) Tj
@@ -203,6 +272,54 @@ T*
 T*
 ( ) Tj
 T*
+(Keep in mind) Tj
+T*
+(- [IMPORTANT] Always pair animation with reduced-motion support.) Tj
+T*
+(- [TIP] Keep first-load transitions short \(0.5s to 0.8s\) so the site still feels snappy.) Tj
+T*
+( ) Tj
+T*
+(---) Tj
+T*
+( ) Tj
+T*
+(4\) Limiting project cards to 5 visible items with scroll) Tj
+T*
+( ) Tj
+T*
+(Problem) Tj
+T*
+(Project cards use different text lengths and image heights, so a CSS-only fixed height cannot always) Tj
+T*
+( ) Tj
+T*
+(Fix) Tj
+T*
+(- Added a JS file: Scripts/JS/projects-scroll.js.) Tj
+T*
+(- The script measures the first 5 .Projects-list cards and sets max-height on .Projects-border-list.) Tj
+T*
+(- Kept scrolling enabled with overflow-y: auto in Scripts/CSS/main.css.) Tj
+T*
+(- Loaded the script in index.html before </body>.) Tj
+T*
+( ) Tj
+T*
+(Why it works) Tj
+T*
+(Because card heights are measured at runtime, the list always shows exactly 5 full cards first. If t) Tj
+T*
+( ) Tj
+T*
+(Keep in mind) Tj
+T*
+(- [IMPORTANT] Change MAX_VISIBLE_PROJECTS in Scripts/JS/projects-scroll.js if you want a different v) Tj
+T*
+(- [IMPORTANT] The script recalculates on page load and resize, so it stays accurate across screen si) Tj
+T*
+( ) Tj
+T*
 (---) Tj
 T*
 ( ) Tj
@@ -217,6 +334,8 @@ T*
 T*
 (- Changed labels to Resume, Projects, and Contact.) Tj
 T*
+(- Added <script src="Scripts/JS/projects-scroll.js"></script> so project list height is computed aut) Tj
+T*
 ( ) Tj
 T*
 (Scripts/CSS/header.css) Tj
@@ -229,29 +348,31 @@ T*
 T*
 (- Improved responsive behavior for tablet and mobile.) Tj
 T*
+(- Tightened stacked header spacing to remove excessive vertical space.) Tj
+T*
 (- Added reduced-motion fallback.) Tj
 T*
 ( ) Tj
 T*
 (Scripts/CSS/main.css) Tj
-T*
-(- Added centered main container with max width.) Tj
-T*
-(- Centered row layouts and standardized spacing.) Tj
 
 ET
 endstream
 endobj
-8 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 9 0 R >>
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 11 0 R >>
 endobj
-9 0 obj
-<< /Length 1803 >>
+11 0 obj
+<< /Length 2540 >>
 stream
 BT
 /F1 11 Tf
 50 800 Td
 14 TL
+(- Added centered main container with max width.) Tj
+T*
+(- Centered row layouts and standardized spacing.) Tj
+T*
 (- Removed manual left offsets from bordered cards.) Tj
 T*
 (- Improved card width behavior for large screens.) Tj
@@ -259,6 +380,18 @@ T*
 (- Added responsive breakpoints for tablet/phone.) Tj
 T*
 (- Switched card heights to auto on mobile.) Tj
+T*
+(- Enabled vertical scrolling in .Projects-border-list \(overflow-y: auto\).) Tj
+T*
+( ) Tj
+T*
+(Scripts/JS/projects-scroll.js) Tj
+T*
+(- Added runtime height calculation for .Projects-border-list.) Tj
+T*
+(- Shows exactly 5 project cards first, then scrolls for additional cards.) Tj
+T*
+(- Recalculates on DOMContentLoaded, load, and resize.) Tj
 T*
 ( ) Tj
 T*
@@ -270,19 +403,21 @@ T*
 T*
 ( ) Tj
 T*
-(- max-width + margin: 0 auto = centered content block on large screens.) Tj
+(- [IMPORTANT] max-width + margin: 0 auto = centered content block on large screens.) Tj
 T*
-(- display: flex + flex-wrap: wrap = responsive row that can stack naturally.) Tj
+(- [IMPORTANT] display: flex + flex-wrap: wrap = responsive row that can stack naturally.) Tj
 T*
-(- flex: 1 1 320px = grow and shrink, with a preferred base width.) Tj
+(- [IMPORTANT] flex: 1 1 320px = grow and shrink, with a preferred base width.) Tj
 T*
-(- Media queries \(@media\) = apply rules only for certain viewport widths.) Tj
+(- [IMPORTANT] Media queries \(@media\) = apply rules only for certain viewport widths.) Tj
 T*
-(- height: auto = let content control the box height.) Tj
+(- [IMPORTANT] height: auto = let content control the box height.) Tj
 T*
 (- @keyframes + animation = create entry transitions.) Tj
 T*
 (- prefers-reduced-motion = accessibility-friendly motion handling.) Tj
+T*
+(- JS measurement + max-height = exact visible card count with variable content.) Tj
 T*
 ( ) Tj
 T*
@@ -314,6 +449,14 @@ T*
 T*
 (   - adjust values in media queries \(900px, 768px, 480px\).) Tj
 T*
+(5. Tighter/looser stacked header spacing:) Tj
+T*
+(   - adjust .header-title { gap: ... } and the tablet/mobile flex rules in Scripts/CSS/header.css.) Tj
+T*
+(6. More/less project cards visible before scrolling:) Tj
+T*
+(   - edit MAX_VISIBLE_PROJECTS in Scripts/JS/projects-scroll.js.) Tj
+T*
 ( ) Tj
 T*
 (---) Tj
@@ -329,8 +472,23 @@ T*
 (- A centered, balanced desktop layout.) Tj
 T*
 (- A cleaner and more even phone/tablet layout.) Tj
-T*
+
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 265 >>
+stream
+BT
+/F1 11 Tf
+50 800 Td
+14 TL
 (- A simple and accessible page-entry fade-in.) Tj
+T*
+(- A projects list that shows 5 cards first, then scrolls for more.) Tj
 T*
 ( ) Tj
 T*
@@ -342,19 +500,23 @@ ET
 endstream
 endobj
 xref
-0 10
+0 14
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000127 00000 n 
-0000000197 00000 n 
-0000000323 00000 n 
-0000002387 00000 n 
-0000002513 00000 n 
-0000004643 00000 n 
-0000004769 00000 n 
+0000000141 00000 n 
+0000000211 00000 n 
+0000000337 00000 n 
+0000002780 00000 n 
+0000002906 00000 n 
+0000005404 00000 n 
+0000005530 00000 n 
+0000007944 00000 n 
+0000008072 00000 n 
+0000010665 00000 n 
+0000010793 00000 n 
 trailer
-<< /Size 10 /Root 1 0 R >>
+<< /Size 14 /Root 1 0 R >>
 startxref
-6624
+11110
 %%EOF
