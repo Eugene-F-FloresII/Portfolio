@@ -161,6 +161,10 @@ header {
     gap: 10px;
 }
 
+.header-buttons a {
+    text-decoration: none;
+}
+
 
 /* ================================
    HR
@@ -212,6 +216,7 @@ hr {
     .header-name {
         font-size: 13px;
     }
+
 }
 
 
@@ -248,6 +253,7 @@ hr {
     .header-name {
         font-size: 12px;
     }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

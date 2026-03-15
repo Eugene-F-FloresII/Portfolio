@@ -46,6 +46,16 @@ main {
     flex-wrap: wrap;
 }
 
+.main-fourth {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
 .Skills-border {
     border: solid;
     border-color: rgb(68, 152, 114);
@@ -414,6 +424,49 @@ main {
     color: rgba(245, 245, 245, 0.72);
 }
 
+.Play-title{
+    align-items: center;
+    display: flex;
+    margin-left: 10px;
+    color:  rgb(187, 205, 197);
+    font-family: JetBrainsMono;
+    font-size: large;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.Play-game-button {
+    font-family: RobotoCondensed, Arial, sans-serif;
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgb(68, 152, 114);
+    color: rgb(68, 152, 114);
+    background-color: rgb(36, 36, 36);
+    height: 35px;
+    width: 200px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.Play-game-button:hover {
+    background-color: rgb(68, 152, 114);
+    color: rgb(36, 36, 36);
+}
+
+.Play-game-button-list {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+.Play-game-button-list img {
+    max-width: 60px;
+}
+
+
 
 
 @media (max-width: 900px) {
@@ -423,7 +476,8 @@ main {
 
     .main-first,
     .main-second,
-    .main-third {
+    .main-third
+    .main-fourth {
         gap: 18px;
     }
 
@@ -431,7 +485,8 @@ main {
     .Experiences-border,
     .Skills-border,
     .Introduction-border,
-    .Showcase-border {
+    .Showcase-border,
+    .Play-border {
         min-width: 0;
         max-width: none;
     }
@@ -496,7 +551,8 @@ main {
 
     .main-first,
     .main-second,
-    .main-third {
+    .main-third
+    .main-fourth {
         margin-top: 14px;
         margin-bottom: 26px;
         gap: 14px;
