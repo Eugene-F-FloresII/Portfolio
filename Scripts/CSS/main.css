@@ -1,588 +1,971 @@
-@font-face {
-    font-family: JetBrainsMono;
-    src: url(../../Assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
+/* ==========================================================================
+   RETRO RPG MAIN STYLES
+   ========================================================================== */
+
+:root {
+    --rpg-bg: #121413;
+    --rpg-panel-bg: #191c1a;
+    --rpg-primary: #449872;
+    --rpg-primary-light: #59c092;
+    --rpg-primary-dark: #2a6148;
+    --rpg-text: #f3f4f6;
+    --rpg-text-dim: #9ca3af;
+    --rpg-text-green: #a7f3d0;
+    --rpg-border-outer: #1e2220;
+    
+    /* Fonts */
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-pixel-condensed: 'VT323', monospace;
+    --font-mono: 'JetBrainsMono', monospace;
 }
 
-@font-face {
-    font-family: RobotoCondensed;
-    src: url(../../Assets/fonts/RobotoCondensed-VariableFont_wght.ttf);
-}
-
+/* Main Layout Wrapper */
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 40px;
+    padding: 0 20px 60px;
 }
 
-.main-first {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    gap: 24px;
-    flex-wrap: wrap;
-
+/* Sections */
+.main-section {
+    margin-bottom: 50px;
 }
 
-.main-second {
-
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.main-third {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.main-fourth {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-
-.Skills-border {
-    border: solid;
-    border-color: rgb(68, 152, 114);
-    border-radius: 10px;
-    height: 600px;
-    width: 100%;
-    flex: 1 1 320px;
-    min-width: 280px;
-    max-width: 380px;
-    box-sizing: border-box;
-}
-.Skills-main {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-
-.Skills-title {
-    margin-left: 10px;
-    color:  rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;   
-}
-
-.Skills-list {
-    max-height: 500px;
-    overflow-y: auto;
-    padding-right: 10px;
-}
-
-/* Custom Scrollbar for Skills list matching the green theme */
-.Skills-list::-webkit-scrollbar {
-    width: 8px;
-}
-
-.Skills-list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.Skills-list::-webkit-scrollbar-thumb {
-    background-color: rgb(68, 152, 114);
-    border-radius: 4px;
-}
-
-.Skills-list::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(58, 132, 94);
-}
-
-.Skills-ol {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-left: 0;
-    list-style-type: none;
-    gap: 20px;
-}
-
-.li-img {
-    margin-top: 10px;
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    transition: all 0.3s ease;
-}
-
-.li-img:hover {
-    width: 180px;
-    height: 180px;
-}
-
-.Experiences-border {
-    border: solid;
-    border-color: rgb(68, 152, 114);
-    border-radius: 10px;
-    height: 600px;
-    width: 100%;
-    flex: 1 1 620px;
-    min-width: 320px;
-    max-width: 760px;
-    box-sizing: border-box;
-}
-
-.Experiences-main {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.Experiences-title {
-    margin-left: 10px;
-    color:  rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;
-}
-
-
-
-.Experiences-listTitle {
-    display: block;
+.text-center {
     text-align: center;
-    margin-top: 20px;
-    font-family: JetBrainsMono;
-    font-size: 18px;
-    font-weight: bold;
-    color: whitesmoke;
 }
 
-.Experiences-list {
-    margin-top: 10px;
-    margin-left: 30px;
-    margin-right: 15px;
-    font-family: JetBrainsMono;
-    font-size: 15px;
-    text-align: justify;
-    color: whitesmoke;
+.justify-center {
+    justify-content: center;
+}
 
+/* Section Titles */
+.section-title {
+    font-family: var(--font-pixel);
+    font-size: 16px;
+    color: var(--rpg-text-green);
+    text-shadow: 2px 2px 0px var(--rpg-border-outer);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-decor {
+    font-size: 18px;
+    animation: floating 2s ease-in-out infinite alternate;
+}
+
+@keyframes floating {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-4px); }
+}
+
+/* --------------------------------------------------------------------------
+   RPG PANEL & WINDOWS (NES/SNES Double-Border Style)
+   -------------------------------------------------------------------------- */
+.rpg-panel {
+    background-color: var(--rpg-panel-bg);
+    border: 4px solid var(--rpg-primary);
+    position: relative;
+    padding: 24px;
+    box-shadow: 6px 6px 0px 0px var(--rpg-border-outer);
+    margin-bottom: 30px;
+}
+
+/* Inset line to mimic double pixel border */
+.rpg-panel::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 2px solid var(--rpg-primary-dark);
+    pointer-events: none;
+}
+
+.panel-title {
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    color: var(--rpg-text-green);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.panel-divider {
+    border: none;
+    height: 4px;
+    background-color: var(--rpg-primary-dark);
+    margin: 20px 0;
+}
+
+/* --------------------------------------------------------------------------
+   CHARACTER SHEET: PROFILE & VITALS
+   -------------------------------------------------------------------------- */
+.character-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 28px;
+}
+
+.profile-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* Portrait */
+.portrait-container {
+    flex-shrink: 0;
+    border: 4px solid var(--rpg-primary);
+    box-shadow: 4px 4px 0px var(--rpg-border-outer);
+    line-height: 0;
+    position: relative;
+    z-index: 10000; /* Lifts image above CRT static lines */
+}
+
+.pixel-portrait {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    image-rendering: pixelated;
+    transition: transform 0.2s ease;
+}
+
+.portrait-container:hover .pixel-portrait {
+    transform: scale(1.05);
+}
+
+/* Vitals details */
+.profile-vitals {
+    flex-grow: 1;
+}
+
+.char-name {
+    font-family: var(--font-pixel);
+    font-size: 14px;
+    color: var(--rpg-text);
+    margin-bottom: 6px;
+}
+
+.char-class {
+    font-size: 13px;
+    color: var(--rpg-primary-light);
+    margin-bottom: 4px;
+}
+
+.char-lvl {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: #eab308;
+    margin-bottom: 12px;
+}
+
+/* Health/Mana Bars */
+.vitals-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.vital-row {
+    display: grid;
+    grid-template-columns: 24px 1fr 65px;
+    align-items: center;
+    gap: 8px;
+}
+
+.vital-label {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.vital-row .vital-label {
+    color: var(--rpg-text);
+}
+
+.vital-bar-track {
+    height: 14px;
+    background-color: #221212;
+    border: 2px solid var(--rpg-border-outer);
+    position: relative;
+}
+
+.vital-bar-track.mp {
+    background-color: #0b1a2d;
+}
+
+.vital-bar-fill {
+    height: 100%;
+    background-color: #ef4444; /* HP Red */
+    transition: width 0.8s cubic-bezier(0.1, 0.8, 0.2, 1);
+}
+
+.vital-bar-track.mp .vital-bar-fill {
+    background-color: #3b82f6; /* MP Blue */
+}
+
+.vital-val {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    text-align: right;
+    color: var(--rpg-text-dim);
+}
+
+/* --------------------------------------------------------------------------
+   DIALOGUE BOX (RPG Dialogue bubble)
+   -------------------------------------------------------------------------- */
+.rpg-dialogue {
+    background-color: #090b0a;
+    border: 3px solid #f3f4f6;
+    padding: 16px;
+    position: relative;
+    margin-top: auto;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialogue-speaker {
+    position: absolute;
+    top: -12px;
+    left: 12px;
+    background-color: #f3f4f6;
+    color: #000;
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    padding: 2px 8px;
+    border: 2px solid var(--rpg-border-outer);
+}
+
+.dialogue-text {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.6;
+    color: #f3f4f6;
+    margin-top: 4px;
+    text-align: justify;
+}
+
+.dialogue-arrow {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
+    color: var(--rpg-primary-light);
+    animation: blink 0.6s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   DEVELOPER ATTRIBUTES (Skills)
+   -------------------------------------------------------------------------- */
+.skills-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stat-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-name {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--rpg-text);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-icon-mini {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    image-rendering: auto;
+}
+
+.stat-lvl {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: var(--rpg-primary-light);
+}
+
+.stat-row .stat-bar-track {
+    height: 12px;
+    background-color: #1a221d;
+    border: 2px solid var(--rpg-border-outer);
+}
+
+.stat-row .stat-bar-fill {
+    background: repeating-linear-gradient(
+        90deg,
+        var(--rpg-primary),
+        var(--rpg-primary) 8px,
+        var(--rpg-primary-light) 8px,
+        var(--rpg-primary-light) 10px
+    );
+}
+
+/* --------------------------------------------------------------------------
+   PASSIVE SKILLS / CAPABILITIES
+   ========================================================================== */
+.abilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.ability-card {
+    background-color: rgba(68, 152, 114, 0.05);
+    border: 2px solid rgba(68, 152, 114, 0.25);
+    padding: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.ability-card:hover {
+    border-color: var(--rpg-primary);
+    background-color: rgba(68, 152, 114, 0.12);
+    transform: translateY(-2px);
+}
+
+.ability-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.ability-name {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: var(--rpg-primary-light);
+    margin-bottom: 4px;
+}
+
+.ability-desc {
+    font-size: 13px;
+    color: var(--rpg-text-dim);
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   QUEST LOG (Experiences)
+   -------------------------------------------------------------------------- */
+.quest-panel {
+    padding: 0;
+}
+
+.quest-log-header {
+    padding: 16px 24px;
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: var(--rpg-text-dim);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .Experiences-lists-container {
-    max-height: 500px;
+    max-height: 580px;
     overflow-y: auto;
-    padding-right: 10px;
+    padding: 24px;
 }
 
-/* Custom Scrollbar for ul matching the green theme */
-.Experiences-lists-container::-webkit-scrollbar {
-    width: 8px;
+/* Custom Scrollbar for Retro Green Theme */
+.Experiences-lists-container::-webkit-scrollbar,
+.Projects-border-list::-webkit-scrollbar {
+    width: 10px;
 }
 
-.Experiences-lists-container::-webkit-scrollbar-track {
-    background: transparent;
+.Experiences-lists-container::-webkit-scrollbar-track,
+.Projects-border-list::-webkit-scrollbar-track {
+    background: #141715;
 }
 
-.Experiences-lists-container::-webkit-scrollbar-thumb {
-    background-color: rgb(68, 152, 114);
-    border-radius: 4px;
+.Experiences-lists-container::-webkit-scrollbar-thumb,
+.Projects-border-list::-webkit-scrollbar-thumb {
+    background-color: var(--rpg-primary);
+    border: 2px solid var(--rpg-border-outer);
 }
 
-.Experiences-lists-container::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(58, 132, 94);
+.Experiences-lists-container::-webkit-scrollbar-thumb:hover,
+.Projects-border-list::-webkit-scrollbar-thumb:hover {
+    background-color: var(--rpg-primary-light);
 }
 
-
-.Introduction-border {
-    border: solid;
-    border-color: rgb(68, 152, 114);
-    border-radius: 10px;
-    height: 400px;
-    width: 100%;
-    flex: 1 1 620px;
-    min-width: 320px;
-    max-width: 760px;
-    box-sizing: border-box;
-    margin-top: 30px;
+.quest-card {
+    background-color: rgba(20, 24, 22, 0.6);
+    border: 3px solid var(--rpg-primary-dark);
+    margin-bottom: 24px;
+    padding: 18px;
+    position: relative;
+    transition: border-color 0.2s ease;
 }
 
-.Introduction-border hr {
-    margin-left: 10px;
-    margin-right: 10px;
+.quest-card:hover {
+    border-color: var(--rpg-primary);
 }
 
-
-
-.Introduction-title {
+.quest-meta {
     display: flex;
-    margin-left: 10px;
-    color:  rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.Introduction-title-border {
-    margin-left: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-right: 30px;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 18px;
+    margin-bottom: 8px;
 }
 
-.Introduction-name {
-    font-size: 25px;
+.quest-status {
+    font-family: var(--font-pixel);
+    font-size: 8px;
 }
 
-.Introduction-role {
-    margin-left: 1px;
+.quest-status.completed {
+    color: var(--rpg-primary-light);
 }
 
-.Introduction-quote {
-    font-style: italic;
-    color: rgba(245, 245, 245, 0.379);
-    font-size: small;
-    text-align: justify;
+.quest-date {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--rpg-text-dim);
 }
 
-.Introduction-text {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: justify;
-    font-family: RobotoCondensed;
-    color: whitesmoke;
-    line-height: 1.6;
-
-}
-
-.Introduction-title-border img {
-    height: 110px;
-    width: 110px;
-    border-radius: 20px;
-}
-
-.Showcase-border {
-
-    border: solid;
-    border-color: rgb(68, 152, 114);
-    border-radius: 10px;
-    height: 400px;
-    width: 100%;
-    flex: 1 1 320px;
-    min-width: 280px;
-    max-width: 380px;
-    box-sizing: border-box;
-    margin-top: 30px;
-}
-
-.Showcase-title {
-    display: flex;
-    margin-left: 10px;
-    color:  rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
-}
-
-.Showcase-list-holder {
-    margin-left: 30px;
+.Experiences-listTitle {
+    font-family: var(--font-pixel);
+    font-size: 11px;
+    color: var(--rpg-text);
+    text-align: left;
     margin-top: 5px;
-    font-family: JetBrainsMono;
-    color: whitesmoke;
-    line-height: 40px;
+    line-height: 1.4;
 }
 
+.quest-divider {
+    border: none;
+    height: 2px;
+    background-color: var(--rpg-primary-dark);
+    margin: 12px 0;
+}
+
+.rpg-label {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: var(--rpg-primary-light);
+    margin-bottom: 8px;
+}
+
+.quest-details ul {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 16px;
+}
+
+.Experiences-list {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--rpg-text);
+    margin-bottom: 8px;
+    padding-left: 18px;
+    position: relative;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.Experiences-list::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--rpg-primary-light);
+    font-size: 10px;
+}
+
+/* Quest Loot / Rewards section */
+.quest-rewards {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--rpg-primary);
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.reward-title {
+    display: block;
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: #eab308; /* Quest Reward Gold */
+    margin-bottom: 10px;
+}
+
+.reward-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.loot-badge {
+    background-color: var(--rpg-bg);
+    border: 2px solid var(--rpg-primary);
+    color: var(--rpg-text-green);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 2px 8px;
+    transition: all 0.2s ease;
+}
+
+.loot-badge:hover {
+    background-color: var(--rpg-primary);
+    color: var(--rpg-bg);
+    transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------------------
+   GAME PROJECTS
+   -------------------------------------------------------------------------- */
 .Projects-border {
-    border: solid;
-    border-color: rgb(68, 152, 114);
-    border-radius: 10px;
-    min-height: 400px;
-    height: auto;
-    width: 100%;
-    flex: 1 1 320px;
-    min-width: 280px;
-    max-width: 1200px;
-    box-sizing: border-box;
+    border: 4px solid var(--rpg-primary);
+    background-color: var(--rpg-panel-bg);
+    box-shadow: 6px 6px 0px 0px var(--rpg-border-outer);
     margin-top: 30px;
+    position: relative;
+}
+
+.Projects-border::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 2px solid var(--rpg-primary-dark);
+    pointer-events: none;
+}
+
+.Project-title {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 10px;
+    gap: 15px;
+}
+
+.project-name {
+    font-family: var(--font-pixel);
+    font-size: 13px;
+    color: var(--rpg-text);
+    margin: 0;
+}
+
+/* Filter tabs styles */
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.filter-btn {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    padding: 6px 10px;
+    border: 2px solid var(--rpg-primary);
+    background-color: var(--rpg-bg);
+    color: var(--rpg-primary);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--rpg-primary-light);
+    color: var(--rpg-primary-light);
+}
+
+.filter-btn.active {
+    background-color: var(--rpg-primary);
+    color: var(--rpg-bg);
 }
 
 .Projects-border-list {
-    padding: 10px 20px 20px;
+    padding: 20px;
     overflow-y: auto;
     overflow-x: hidden;
+    position: relative;
+    max-height: 520px; /* Constrained for scrolling, recalculated in JS */
 }
 
 .Projects-border-list ol {
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.project-description-name {
-    margin: 0;
-    color: rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;
-    line-height: 1.3;
-}
-
-.Project-description {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-}
-
-.Project-description p {
-    margin: 0;
-    font-family: RobotoCondensed;
-    color: whitesmoke;
-    line-height: 1.5;
-    text-align: justify;
-}
-
-.project-name {
-    display: flex;
-    margin-left: 10px;
-    color:  rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
 }
 
 .Projects-list {
     display: flex;
-    position: relative;
-    align-items: flex-start;
-    font-family: JetBrainsMono;
-    color: rgb(187, 205, 197);
+    background-color: rgba(20, 24, 22, 0.4);
+    border: 3px solid rgba(68, 152, 114, 0.25);
+    border-radius: 0;
+    padding: 16px;
+    margin-bottom: 16px;
     gap: 20px;
-    padding: 14px;
-    margin-bottom: 14px;
-    border: 1px solid rgba(68, 152, 114, 0.35);
-    border-radius: 10px;
-    background-color: rgba(68, 152, 114, 0.08);
-    transform-origin: center;
     transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-    will-change: transform;
 }
 
 .Projects-list:hover {
-    transform: scale(1.02);
-    border-color: rgba(68, 152, 114, 0.6);
-    background-color: rgba(68, 152, 114, 0.14);
-    z-index: 1;
+    transform: scale(1.01);
+    border-color: var(--rpg-primary);
+    background-color: rgba(68, 152, 114, 0.1);
 }
 
 .Projects-list img {
-    width: 240px;
-    max-width: 100%;
-    border-radius: 8px;
+    width: 220px;
+    height: 140px;
     object-fit: cover;
+    border: 3px solid var(--rpg-primary-dark);
     flex-shrink: 0;
 }
 
-.Projects-border-list::-webkit-scrollbar {
-    width: 8px;
+.project-description-name {
+    font-family: var(--font-pixel);
+    font-size: 11px;
+    color: var(--rpg-text);
+    margin-bottom: 8px;
+    display: block;
 }
 
-.Projects-border-list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.Projects-border-list::-webkit-scrollbar-thumb {
-    background-color: rgb(68, 152, 114);
-    border-radius: 4px;
-}
-
-.Projects-border-list::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(58, 132, 94);
-}
-
-
-.Projects-list.placeholder {
-    background-color: rgba(68, 152, 114, 0.04);
-}
-
-.Projects-list.placeholder .Project-description p {
-    color: rgba(245, 245, 245, 0.72);
-}
-
-.Play-title{
-    align-items: center;
+.project-badges {
     display: flex;
-    margin-left: 10px;
-    color:  rgb(187, 205, 197);
-    font-family: JetBrainsMono;
-    font-size: large;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.engine-badge, .tag-badge {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    padding: 2px 6px;
+    border: 1px solid var(--rpg-primary-dark);
+    background-color: rgba(0,0,0,0.3);
+}
+
+.engine-badge.unity {
+    color: var(--rpg-text-green);
+    border-color: var(--rpg-primary);
+}
+
+.engine-badge.godot {
+    color: #60a5fa; /* Blue accent */
+    border-color: #3b82f6;
+}
+
+.tag-badge.jam {
+    color: #fca5a5; /* Red accent */
+    border-color: #ef4444;
+}
+
+.tag-badge.professional {
+    color: #fef08a; /* Yellow/Gold accent */
+    border-color: #eab308;
+}
+
+.Project-description p {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--rpg-text-dim);
+    text-align: justify;
+}
+
+/* --------------------------------------------------------------------------
+   TROPHIES & ACHIEVEMENTS
+   -------------------------------------------------------------------------- */
+.achievements-panel {
+    background-color: #121413;
+    border-color: #eab308; /* Gold border for achievement panel */
+}
+
+.achievements-panel::before {
+    border-color: #a16207;
+}
+
+.Achievements-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.achievement-card {
+    background-color: rgba(234, 179, 8, 0.03);
+    border: 2px solid rgba(234, 179, 8, 0.2);
+    padding: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.achievement-card:hover {
+    border-color: #eab308;
+    background-color: rgba(234, 179, 8, 0.08);
+}
+
+.achievement-img {
+    width: 140px;
+    height: 90px;
+    object-fit: cover;
+    border: 2px solid #a16207;
+    flex-shrink: 0;
+}
+
+.achievement-placeholder-icon {
+    width: 140px;
+    height: 90px;
+    background-color: #1a1712;
+    border: 2px dashed #a16207;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    flex-shrink: 0;
+}
+
+.achievement-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
-    margin-left: 20px;
-    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-.Play-game-button {
-    font-family: RobotoCondensed, Arial, sans-serif;
+.achievement-stars {
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.badge {
+    font-family: var(--font-pixel);
+    font-size: 8px;
+    padding: 2px 6px;
+}
+
+.badge.gold {
+    background-color: rgba(234, 179, 8, 0.2);
+    color: #eab308;
+    border: 1px solid #eab308;
+}
+
+.badge.bronze {
+    background-color: rgba(212, 163, 115, 0.2);
+    color: #d4a373;
+    border: 1px solid #d4a373;
+}
+
+.achievement-title {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: var(--rpg-text);
+    margin-bottom: 8px;
+}
+
+.achievement-desc {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--rpg-text-dim);
+    text-align: justify;
+}
+
+/* --------------------------------------------------------------------------
+   BOSS PANEL / PLAY BUTTONS
+   -------------------------------------------------------------------------- */
+.boss-panel {
+    border-color: #ef4444; /* Boss panel red border */
+    background: radial-gradient(circle at center, #271414, #121413 70%);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.boss-panel::before {
+    border-color: #991b1b;
+}
+
+.boss-level {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    color: #ef4444;
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.Play-title {
+    font-family: var(--font-pixel);
+    font-size: 18px;
+    color: #f3f4f6;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.boss-desc {
     font-size: 15px;
-    border-radius: 6px;
-    border: 1px solid rgb(68, 152, 114);
-    color: rgb(68, 152, 114);
-    background-color: rgb(36, 36, 36);
-    height: 35px;
-    width: 200px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.Play-game-button:hover {
-    background-color: rgb(68, 152, 114);
-    color: rgb(36, 36, 36);
+    color: var(--rpg-text-dim);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .Play-game-button-list {
-    align-items: center;
     display: flex;
+    align-items: center;
     gap: 20px;
 }
+
 .Play-game-button-list img {
-    max-width: 60px;
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    image-rendering: pixelated;
 }
 
+.Play-game-button {
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    padding: 12px 24px;
+    border-radius: 0;
+    border: 4px solid var(--rpg-primary);
+    color: var(--rpg-text);
+    background-color: var(--rpg-bg);
+    cursor: pointer;
+    box-shadow: 4px 4px 0px 0px var(--rpg-border-outer);
+    transition: all 0.15s ease;
+    text-transform: uppercase;
+}
 
+.Play-game-button:hover {
+    background-color: var(--rpg-primary);
+    color: var(--rpg-bg);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--rpg-border-outer);
+}
 
+.Play-game-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--rpg-border-outer);
+}
 
-@media (max-width: 900px) {
-    main {
-        padding: 0 16px 32px;
-    }
+/* Micro animations */
+.retro-shake:hover {
+    animation: shake 0.3s infinite;
+}
 
-    .main-first,
-    .main-second,
-    .main-third
-    .main-fourth {
-        gap: 18px;
-    }
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(2px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(2px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
 
-    .Projects-border,
-    .Experiences-border,
-    .Skills-border,
-    .Introduction-border,
-    .Showcase-border,
-    .Play-border {
-        min-width: 0;
-        max-width: none;
+/* ==========================================================================
+   RESPONSIVE — MAIN STYLES
+   ========================================================================== */
+@media (max-width: 992px) {
+    .character-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 
 @media (max-width: 768px) {
-    .Experiences-border,
-    .Skills-border,
-    .Introduction-border,
-    .Projects-border,
-    .Showcase-border {
-        height: auto;
-        margin-top: 0;
+    main {
+        padding: 0 15px 40px;
     }
-
-    .Experiences-lists-container,
-    .Skills-list {
-        max-height: none;
-        overflow-y: visible;
-        padding-right: 0;
+    
+    .section-title {
+        font-size: 13px;
     }
-
-    .Introduction-title-border {
+    
+    .profile-header {
         flex-direction: column;
         align-items: center;
-        margin: 20px;
         text-align: center;
     }
-
-    .Introduction-title,
-    .Introduction-quote {
-        text-align: center;
+    
+    .vital-row {
+        grid-template-columns: 24px 1fr 50px;
     }
 
-    .Experiences-list {
-        text-align: left;
+    .Experiences-lists-container {
+        max-height: none;
+        overflow-y: visible;
+        padding: 16px;
     }
-
-    .Showcase-list-holder {
-        margin: 10px 20px 20px;
-        line-height: 32px;
-    }
-
-    .Projects-border-list {
-        padding: 10px 14px 16px;
-    }
-
+    
     .Projects-list {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
-
+    
     .Projects-list img {
         width: 100%;
+        height: 180px;
+    }
+
+    .achievement-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .achievement-img, .achievement-placeholder-icon {
+        width: 100%;
+        height: 150px;
+    }
+
+    .achievement-meta {
+        justify-content: center;
+    }
+
+    .Play-game-button-list {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 480px) {
-    main {
-        padding: 0 12px 24px;
+    .char-name {
+        font-size: 12px;
     }
-
-    .main-first,
-    .main-second,
-    .main-third
-    .main-fourth {
-        margin-top: 14px;
-        margin-bottom: 26px;
-        gap: 14px;
+    
+    .dialogue-text {
+        font-size: 13px;
     }
-
-    .Experiences-listTitle {
-        font-size: 16px;
+    
+    .rpg-panel {
+        padding: 16px;
     }
-
-    .Experiences-list {
-        margin-left: 20px;
-        font-size: 14px;
-    }
-
-    .Introduction-name {
-        font-size: 22px;
-    }
-
-    .Introduction-text {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    .li-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .li-img:hover {
-        width: 140px;
-        height: 140px;
+    
+    .rpg-dialogue {
+        min-height: 200px;
     }
 }

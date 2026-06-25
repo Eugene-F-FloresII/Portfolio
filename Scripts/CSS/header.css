@@ -1,21 +1,25 @@
-/* ================================
-   FONTS
-================================ */
-@font-face {
-    font-family: JetBrainsMono;
-    src: url(../../Assets/fonts/JetBrainsMono-VariableFont_wght.ttf);
-}
+/* ==========================================================================
+   RETRO RPG HUD HEADER STYLES
+   ========================================================================== */
 
-@font-face {
-    font-family: RobotoCondensed;
-    src: url(../../Assets/fonts/RobotoCondensed-VariableFont_wght.ttf);
+/* Typography & Root variables (Also applied globally through header) */
+:root {
+    --rpg-bg: #121413;
+    --rpg-panel-bg: #191c1a;
+    --rpg-primary: #449872;
+    --rpg-primary-light: #59c092;
+    --rpg-primary-dark: #2a6148;
+    --rpg-text: #f3f4f6;
+    --rpg-text-dim: #9ca3af;
+    --rpg-text-green: #a7f3d0;
+    --rpg-border-outer: #1e2220;
     
+    /* Fonts */
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-pixel-condensed: 'VT323', monospace;
+    --font-mono: 'JetBrainsMono', monospace;
 }
 
-
-/* ================================
-   BASE / RESET
-================================ */
 * {
     margin: 0;
     padding: 0;
@@ -23,30 +27,39 @@
 }
 
 body {
-    background-color: rgb(36, 36, 36);
-    font-family: RobotoCondensed, Arial, sans-serif;
+    background-color: var(--rpg-bg);
+    color: var(--rpg-text);
+    font-family: var(--font-mono), monospace;
     opacity: 0;
-    animation: pageFadeIn 0.7s ease-out forwards;
+    animation: pageFadeIn 0.8s steps(8, end) forwards;
+    overflow-x: hidden;
 }
 
 @keyframes pageFadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
+/* CRT Scanlines Overlay */
+.crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%, 
+        rgba(0, 0, 0, 0.15) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 9999;
+    pointer-events: none;
+}
 
-/* ================================
-   HEADER
-================================ */
 header {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 14px 20px 10px;
+    padding: 20px 20px 10px;
 }
 
 .header-title {
@@ -54,217 +67,227 @@ header {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Header Name */
+box-sizing: border-box;
+}
+
+.header-branding {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
 }
 
 .header-name {
-    font-family: RobotoCondensed, Arial, sans-serif;
-    font-size: 15px;
-    color: rgb(68, 152, 114);
-    font-weight: normal;
-    flex: 1 1 320px;
+    font-family: var(--font-pixel);
+    font-size: 14px;
+    color: var(--rpg-primary-light);
+    line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
-#title-name {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
+.header-role-sub {
+    font-family: var(--font-pixel);
+    font-size: 9px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-top: 4px;
 }
 
-
-/* ================================
-   HEADER RIGHT (icons + button)
-================================ */
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-left: auto;
-}
-
-
-/* ================================
-   ICONS
-================================ */
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.header-icons a {
-    display: flex;
-    text-decoration: none;
-    color: inherit;
-    line-height: 0;
-}
-
-.header-icon {
-    height: 30px;
-    width: 30px;
-    background-color: rgb(68, 152, 114);
-    transition: all 0.3s ease;
-}
-
-.header-icon-round {
-    border-radius: 50%;
-}
-
-.header-icon-square {
-    height: 30px;
-    width: 30px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.header-icon-square:hover {
-    height: 35px;
-    width: 35px;
-    border-radius: 5px;
-}
-
-
-.header-icon:hover {
-    height: 35px;
-    width: 35px;
-}
-
-
-/* ================================
-   BUTTONS
-================================ */
-.header-button {
-    font-family: RobotoCondensed, Arial, sans-serif;
-    font-size: 15px;
-    border-radius: 6px;
-    border: 1px solid rgb(68, 152, 114);
-    color: rgb(68, 152, 114);
-    background-color: rgb(36, 36, 36);
-    height: 35px;
-    width: 80px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.header-button:hover {
-    background-color: rgb(68, 152, 114);
-    color: rgb(36, 36, 36);
-}
-
+/* HUD Navigation Buttons */
 .header-buttons {
     display: flex;
-    flex: 1 1 260px;
+    flex: 1 1 auto;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
 }
 
 .header-buttons a {
     text-decoration: none;
 }
 
-
-/* ================================
-   HR
-================================ */
-hr {
-    border: none;
-    background-color: rgb(68, 152, 114);
-    height: 2px;
-    margin-top: 10px;
+.header-button {
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    padding: 8px 12px;
+    border-radius: 0;
+    border: 3px solid var(--rpg-primary);
+    color: var(--rpg-primary);
+    background-color: var(--rpg-bg);
+    cursor: pointer;
+    position: relative;
+    box-shadow: 3px 3px 0px 0px var(--rpg-border-outer);
+    transition: all 0.15s ease;
+    image-rendering: pixelated;
 }
 
+.header-button:hover {
+    background-color: var(--rpg-primary);
+    color: var(--rpg-bg);
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px 0px var(--rpg-border-outer);
+}
 
-/* ================================
-   RESPONSIVE — TABLET (max 768px)
-================================ */
-@media (max-width: 768px) {
+.header-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px var(--rpg-border-outer);
+}
+
+/* Highlighted button (Resume) */
+.header-button.highlight {
+    border-color: #eab308;
+    color: #eab308;
+}
+
+.header-button.highlight:hover {
+    background-color: #eab308;
+    color: var(--rpg-bg);
+}
+
+/* Sound controller button */
+.header-button.sound-toggle-btn {
+    border-color: var(--rpg-text-dim);
+    color: var(--rpg-text-dim);
+}
+
+.header-button.sound-toggle-btn:hover {
+    background-color: var(--rpg-text-dim);
+    color: var(--rpg-bg);
+}
+
+.header-button.sound-toggle-btn.muted {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.header-button.sound-toggle-btn.muted:hover {
+    background-color: #ef4444;
+    color: var(--rpg-bg);
+}
+
+/* Icons & Social Links */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-icons a {
+    display: flex;
+    text-decoration: none;
+    line-height: 0;
+    border: 2px solid transparent;
+    padding: 2px;
+    transition: border-color 0.2s ease;
+}
+
+.header-icons a:hover {
+    border-color: var(--rpg-primary-light);
+}
+
+.header-icon {
+    height: 32px;
+    width: 32px;
+    border-radius: 0; /* Retro square look */
+    background-color: var(--rpg-primary);
+    padding: 4px;
+    image-rendering: pixelated;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.header-icon-round {
+    border-radius: 0; /* Overwriting rounded with retro square */
+}
+
+.header-icon-square {
+    height: 32px;
+    width: 32px;
+    border-radius: 0;
+    background-color: #ea4c89; /* Itch.io retro red tone */
+    padding: 3px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.header-icons a:hover .header-icon {
+    background-color: var(--rpg-primary-light);
+    transform: scale(1.1);
+}
+
+.header-icons a:hover .header-icon-square {
+    background-color: #ff66a3;
+    transform: scale(1.1);
+}
+
+/* Retro HUD Divider */
+.rpg-divider {
+    border: none;
+    height: 6px;
+    background-color: var(--rpg-primary);
+    box-shadow: 0px 3px 0px 0px var(--rpg-border-outer);
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   RESPONSIVE — HUD HEADER
+   ========================================================================== */
+@media (max-width: 992px) {
     .header-title {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-    }
-
-    .header-name,
-    .header-buttons,
-    .header-right {
-        flex: 0 0 auto;
-    }
-
-    .header-right {
-        width: auto;
-        justify-content: center;
-        margin-left: 0;
-    }
-
-    .header-buttons {
-        justify-content: center;
-        width: auto;
-    }
-
-    .header-button {
-        margin-right: 0;
-    }
-
-    .header-name {
-        width: 100%;
         text-align: center;
     }
 
-    .header-name {
-        font-size: 13px;
-    }
-
-}
-
-
-/* ================================
-   RESPONSIVE — MOBILE (max 480px)
-================================ */
-@media (max-width: 480px) {
-    header {
-        padding: 10px 12px;
-    }
-
-    .header-right {
-        flex-direction: column;
+    .header-branding {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: center;
         align-items: center;
-        gap: 10px;
     }
 
     .header-buttons {
-        gap: 8px;
+        width: 100%;
+        justify-content: center;
     }
 
-    .header-button {
-        width: calc(50% - 8px);
-        min-width: 120px;
-        font-size: 14px;
+    .header-right {
+        margin: 10px auto 0;
     }
+}
 
-    .header-icon,
-    .header-icon-square {
-        height: 26px;
-        width: 26px;
-    }
-
+@media (max-width: 600px) {
     .header-name {
-        font-size: 12px;
+        font-size: 10px;
     }
-
+    
+    .header-button {
+        font-size: 8px;
+        padding: 6px 10px;
+        border-width: 2px;
+    }
+    
+    .header-icon, .header-icon-square {
+        height: 28px;
+        width: 28px;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
     body {
         animation: none;
         opacity: 1;
-    }
-
-    .header-icon,
-    .header-icon-square,
-    .header-button {
-        transition: none;
     }
 }

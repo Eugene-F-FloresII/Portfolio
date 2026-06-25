@@ -3,299 +3,573 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Eugene F. Flores II | Game Developer Portfolio</title>
     <link rel="icon" href="Assets/images/folder.png" type="image/png">
     
+    <!-- Retro RPG Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="Scripts/CSS/header.css">
     <link rel="stylesheet" href="Scripts/CSS/footer.css">
     <link rel="stylesheet" href="Scripts/CSS/main.css">
 </head>
 <body>
+    <!-- Subtle CRT scanline overlay effect -->
+    <div class="crt-overlay"></div>
+
     <header>
         <div class="header-title">
-
-            <h3 class="header-name">
-                <span id="title-name">Eugene F. Flores II |</span>
-                Developer Portfolio and Resume
-            </h3>
+            <div class="header-branding">
+                <h3 class="header-name">EUGENE F. FLORES II</h3>
+                <span class="header-role-sub">Game Developer</span>
+            </div>
 
             <div class="header-buttons">
-                <a href="docs/Flores_Resume.pdf" download><button class="header-button">Resume</button></a>
-                <a href="#Game-projects"><button class="header-button">Projects</button></a>
-                <a href="mailto:eFloresii@outlook.com"><button class="header-button">Contact</button></a>
+                <a href="#character-sheet" class="hud-nav-btn"><button class="header-button">Status</button></a>
+                <a href="#quest-log" class="hud-nav-btn"><button class="header-button">Experience</button></a>
+                <a href="#game-projects" class="hud-nav-btn"><button class="header-button">Games</button></a>
+                <a href="docs/Flores_Resume.pdf" download><button class="header-button highlight">Resume</button></a>
+                <button class="header-button sound-toggle-btn">🔇 Sound Off</button>
             </div>
 
             <div class="header-right">
                 <div class="header-icons">
                     <a href="https://github.com/Eugene-F-FloresII" target="_blank" title="Github profile">
-                        <img src="Assets/images/GithubIcon.png" class="header-icon header-icon-round">
+                        <img src="Assets/images/GithubIcon.png" class="header-icon header-icon-round" alt="GitHub">
                     </a>
                     <a href="https://www.linkedin.com/in/eugenefloresii/" target="_blank" title="LinkedIn profile">
-                        <img src="Assets/images/LinkedInIcon.png" class="header-icon header-icon-round">
+                        <img src="Assets/images/LinkedInIcon.png" class="header-icon header-icon-round" alt="LinkedIn">
                     </a>
                     <a href="https://huge-games.itch.io/" target="_blank" title="Itch.io profile">
-                        <img src="Assets/images/ItchioIcon.png" class="header-icon-square">
+                        <img src="Assets/images/ItchioIcon.png" class="header-icon-square" alt="Itch.io">
                     </a>
                 </div>
             </div>
-
         </div>
-        <hr>
+        <hr class="rpg-divider">
     </header>
 
     <main>
+        <!-- SECTION 1: CHARACTER SELECT & STATUS SHEET -->
+        <section id="character-sheet" class="main-section">
+            <h2 class="section-title"><span class="title-decor">⚔️</span> CHARACTER SHEET <span class="title-decor">⚔️</span></h2>
+            
+            <div class="rpg-grid character-layout">
+                <!-- Vitals & Profile Panel -->
+                <div class="rpg-panel profile-panel">
+                    <div class="profile-header">
+                        <div class="portrait-container">
+                            <img src="Assets/images/ProfessionalPic.png" alt="Eugene F. Flores II Portrait" class="pixel-portrait">
+                        </div>
+                        <div class="profile-vitals">
+                            <h3 class="char-name">EUGENE F. FLORES II</h3>
+                            <p class="char-class">Class: Game Programmer</p>
+                            <p class="char-lvl">LVL: 24 (XP: 100%)</p>
+                            
+                            <!-- RPG Vitals (HP/MP) -->
+                            <div class="vitals-container">
+                                <div class="vital-row">
+                                    <span class="vital-label">HP</span>
+                                    <div class="vital-bar-track hp">
+                                        <div class="vital-bar-fill" style="width: 100%;"></div>
+                                    </div>
+                                    <span class="vital-val">999/999</span>
+                                </div>
+                                <div class="vital-row">
+                                    <span class="vital-label">MP</span>
+                                    <div class="vital-bar-track mp">
+                                        <div class="vital-bar-fill" style="width: 100%;"></div>
+                                    </div>
+                                    <span class="vital-val">777/777</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <hr class="panel-divider">
+                    
+                    <!-- Dialogue Box Bio -->
+                    <div class="rpg-dialogue">
+                        <div class="dialogue-speaker">SYSTEM MESSAGE</div>
+                        <div class="dialogue-text">
+                            <p>"Hey, I'm Eugene. As a Game Developer/Programmer, I turn creative designs into reality through clean, scalable code. Whether I'm building core gameplay mechanics, wiring up UI, or tackling multiplayer basics, I focus on building systems that work. My background as a player allows me to anticipate user needs, while my dedication to playtesting, debugging, and edge-case analysis ensures the mechanics I develop are polished, optimized, and reliable."</p>
+                            <span class="dialogue-arrow">▼</span>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="main-first">
-        <div class="Experiences-border">
-            <div class="Experiences-main">
-                <span class="Experiences-title">Experiences</span>
-                <hr>
-                <br>
+                <!-- Attributes & Skill Bars -->
+                <div class="rpg-panel stats-panel">
+                    <h3 class="panel-title">DEVELOPER ATTRIBUTES</h3>
+                    <div class="skills-list-container">
+                        <!-- C# Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name">C# Programming</span>
+                                <span class="stat-lvl">[LVL 95]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <!-- Unity Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name"><img src="Assets/images/UnityIcon.png" class="stat-icon-mini"> Unity Engine</span>
+                                <span class="stat-lvl">[LVL 95]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <!-- Godot Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name"><img src="Assets/images/GodotIcon.png" class="stat-icon-mini"> Godot Engine</span>
+                                <span class="stat-lvl">[LVL 88]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <!-- GDScript Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name">GDScript</span>
+                                <span class="stat-lvl">[LVL 85]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <!-- UI/UX Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name"><img src="Assets/images/Figma.png" class="stat-icon-mini"> UI/UX (Figma/Canva)</span>
+                                <span class="stat-lvl">[LVL 82]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                        <!-- Art Tools Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name"><img src="Assets/images/AsepriteIcon.png" class="stat-icon-mini"> Pixel Art (Aseprite)</span>
+                                <span class="stat-lvl">[LVL 80]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <!-- HTML/CSS Stat -->
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-name"><img src="Assets/images/HTMLicon.png" class="stat-icon-mini"> Front-End (HTML/CSS)</span>
+                                <span class="stat-lvl">[LVL 75]</span>
+                            </div>
+                            <div class="stat-bar-track">
+                                <div class="stat-bar-fill" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CAPABILITIES / ABILITIES -->
+        <section id="abilities" class="main-section">
+            <div class="rpg-panel abilities-panel">
+                <h3 class="panel-title text-center">⚔️ PASSIVE SKILLS & SPECIAL ABILITIES ⚔️</h3>
+                <div class="abilities-grid">
+                    <div class="ability-card">
+                        <span class="ability-icon">📜</span>
+                        <div class="ability-details">
+                            <h4 class="ability-name">C# Unity Developer</h4>
+                            <p class="ability-desc">Advanced systems architecture and OOP in game worlds.</p>
+                        </div>
+                    </div>
+                    <div class="ability-card">
+                        <span class="ability-icon">⚡</span>
+                        <div class="ability-details">
+                            <h4 class="ability-name">GDScript Godot Developer</h4>
+                            <p class="ability-desc">Rapid 2D/3D mechanics and scene construction.</p>
+                        </div>
+                    </div>
+                    <div class="ability-card">
+                        <span class="ability-icon">🔍</span>
+                        <div class="ability-details">
+                            <h4 class="ability-name">QA Game Tester</h4>
+                            <p class="ability-desc">Rigorous analysis, bug logging, and gameplay feedback.</p>
+                        </div>
+                    </div>
+                    <div class="ability-card">
+                        <span class="ability-icon">🎨</span>
+                        <div class="ability-details">
+                            <h4 class="ability-name">UI/UX Design</h4>
+                            <p class="ability-desc">Creating game interfaces that are intuitive and functional.</p>
+                        </div>
+                    </div>
+                    <div class="ability-card">
+                        <span class="ability-icon">🎞️</span>
+                        <div class="ability-details">
+                            <h4 class="ability-name">Video Editor</h4>
+                            <p class="ability-desc">Crafting promotional gameplay trailers and logs.</p>
+                        </div>
+                    </div>
+                    <div class="ability-card">
+                        <span class="ability-icon">✍️</span>
+                        <div class="ability-details">
+                            <h4 class="ability-name">Story Writer</h4>
+                            <p class="ability-desc">Designing branching narratives and psychological lore.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: EXPERIENCE LOG -->
+        <section id="quest-log" class="main-section">
+            <h2 class="section-title"><span class="title-decor">📜</span> EXPERIENCE LOG <span class="title-decor">📜</span></h2>
+            
+            <div class="rpg-panel quest-panel">
+                <div class="quest-log-header">
+                    <span class="quest-count">Active Campaign: 4 Roles Completed</span>
+                </div>
+                <hr class="panel-divider">
+                
                 <div class="Experiences-lists-container">
-                    <ul> <span class="Experiences-listTitle"> C# Unity Programmer - NinetySix Studios</span>
-                        <hr>
-                        <li class="Experiences-list">Collaborated with the development team to build and refine core gameplay mechanics, writing clean, well-documented C# code.</li>
-                        <li class="Experiences-list">Engineered scalable and maintainable game architecture using C# Observer Pattern, Interfaces, Service Locators, Factory design pattern and etc. to streamline object creation.</li>
-                        <li class="Experiences-list">Designed modular, data-driven systems utilizing Scriptable Object Architecture Pattern (SOAP) to allow easy balancing and tweaking by designers.</li>
-                        <li class="Experiences-list"> Utilized C# Reflection to dynamically inspect and manipulate object properties at runtime, creating more flexible and robust game systems.</li>
-                    </ul>
-                    <br> <!--line break-->
-                     <ul> <span class="Experiences-listTitle">C# Unity Programmer - Solo Programmer, M2VEX FMV Educational Virtual School Tour</span>
-                        <hr>
-                        <li class="Experiences-list">M2VEX is a virtual campus exploration game designed to provide immersive and informative walkthrough of Mapúa Malayan Colleges Mindanao</li>
-                     </ul>
-                    <br>
-                    <ul> <span class="Experiences-listTitle">Unity C# Programmer, Game Jam Projects</span>
-                        <hr>
-                        <li class="Experiences-list">Projects: Fruited to Return (thatgamejam #01), Frigg’s Grill n Thrill (Top 30 Scream Jam 2024)</li>
-                        <li class="Experiences-list">Consistently engineered core gameplay loops, mechanics, and UI systems across multiple game jams within strict 48- to 72-hour</li>
-                        <li class="Experiences-list">Adapted to diverse game genres from roguelite precision platformers to horror simulations utilizing clean, modular C#
-                        architecture in Unity.
-                        </li>
-                        <li class="Experiences-list">Collaborated with teams and worked solo to rapid-prototype, debug, and polish mechanics to ensure fully playable and balanced
-                        submissions.
-                        </li>
-                    </ul>
-                    <br>
-                    <ul> <span class="Experiences-listTitle">GDScript Godot Programmer, Game Jam Projects</span>
-                        <hr>
-                        <li class="Experiences-list">Projects: Michelle (Top 10 Scream Secrets 2024), Plate Pals (Micro-Jam: Food 2025)</li>
-                        <li class="Experiences-list">Built dynamic systems including narrative-driven event triggers for psychological horror and order-management quotas for simulation games.</li>
-                        <li class="Experiences-list">Developed highly-rated 2D pixel art games from scratch using Godot and GDScript under extreme time constraints.</li>
-                    </ul>
+                    <!-- Quest 1: NinetySix Studios -->
+                    <div class="quest-card">
+                        <div class="quest-meta">
+                            <span class="quest-date">2024 - 2025</span>
+                        </div>
+                        <h3 class="Experiences-listTitle">C# Unity Programmer – NinetySix Studios</h3>
+                        <hr class="quest-divider">
+                        <div class="quest-details">
+                            <h4 class="rpg-label">Objectives:</h4>
+                            <ul>
+                                <li class="Experiences-list">Collaborated with the development team to build and refine core gameplay mechanics, writing clean, well-documented C# code.</li>
+                                <li class="Experiences-list">Engineered scalable and maintainable game architecture using C# Observer Pattern, Interfaces, Service Locators, Factory design pattern, etc. to streamline object creation.</li>
+                                <li class="Experiences-list">Designed modular, data-driven systems utilizing Scriptable Object Architecture Pattern (SOAP) to allow easy balancing and tweaking by designers.</li>
+                                <li class="Experiences-list">Utilized C# Reflection to dynamically inspect and manipulate object properties at runtime, creating more flexible and robust game systems.</li>
+                            </ul>
+                            
+                            <div class="quest-rewards">
+                                <span class="reward-title">Experience Gained:</span>
+                                <div class="reward-badges">
+                                    <span class="loot-badge">Observer Pattern</span>
+                                    <span class="loot-badge">Factory Pattern</span>
+                                    <span class="loot-badge">Scriptable Objects (SOAP)</span>
+                                    <span class="loot-badge">C# Reflection</span>
+                                    <span class="loot-badge">Team Collaboration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Quest 2: M2VEX Tour -->
+                    <div class="quest-card">
+                        <div class="quest-meta">
+                            <span class="quest-date">2024</span>
+                        </div>
+                        <h3 class="Experiences-listTitle">Solo Developer – M2VEX FMV School Tour</h3>
+                        <hr class="quest-divider">
+                        <div class="quest-details">
+                            <h4 class="rpg-label">Objectives:</h4>
+                            <ul>
+                                <li class="Experiences-list">Developed M2VEX, a virtual campus exploration game designed to provide an immersive and informative walkthrough of Mapúa Malayan Colleges Mindanao.</li>
+                                <li class="Experiences-list">Engineered full-motion video (FMV) interaction logic and path node selection systems for a seamless 360-degree tour simulation.</li>
+                            </ul>
+                            
+                            <div class="quest-rewards">
+                                <span class="reward-title">Experience Gained:</span>
+                                <div class="reward-badges">
+                                    <span class="loot-badge">FMV Tech</span>
+                                    <span class="loot-badge">Solo Game Dev</span>
+                                    <span class="loot-badge">Campus Tour Systems</span>
+                                    <span class="loot-badge">Node-based Navigation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-deadlines.
-</li>
-                     </ul>
+                    <!-- Quest 3: Unity Game Jams -->
+                    <div class="quest-card">
+                        <div class="quest-meta">
+                            <span class="quest-date">Ongoing</span>
+                        </div>
+                        <h3 class="Experiences-listTitle">Unity C# Game Jams Campaign</h3>
+                        <hr class="quest-divider">
+                        <div class="quest-details">
+                            <h4 class="rpg-label">Objectives:</h4>
+                            <ul>
+                                <li class="Experiences-list">Projects: <em>Fruited to Return</em> (thatgamejam #01), <em>Frigg’s Grill n Thrill</em> (Top 30 Scream Jam 2024).</li>
+                                <li class="Experiences-list">Consistently engineered core gameplay loops, mechanics, and UI systems across multiple game jams within strict 48- to 72-hour deadlines.</li>
+                                <li class="Experiences-list">Adapted to diverse game genres from roguelite precision platformers to horror simulations utilizing clean, modular C# architecture in Unity.</li>
+                                <li class="Experiences-list">Collaborated with teams and worked solo to rapid-prototype, debug, and polish mechanics to ensure fully playable and balanced submissions.</li>
+                            </ul>
+                            
+                            <div class="quest-rewards">
+                                <span class="reward-title">Experience Gained:</span>
+                                <div class="reward-badges">
+                                    <span class="loot-badge">Rapid Prototyping</span>
+                                    <span class="loot-badge">Gameplay Loop Design</span>
+                                    <span class="loot-badge">Unity UI Canvas</span>
+                                    <span class="loot-badge">Scream Jam Badge</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quest 4: Godot Game Jams -->
+                    <div class="quest-card">
+                        <div class="quest-meta">
+                            <span class="quest-date">Ongoing</span>
+                        </div>
+                        <h3 class="Experiences-listTitle">GDScript Godot Game Jams Campaign</h3>
+                        <hr class="quest-divider">
+                        <div class="quest-details">
+                            <h4 class="rpg-label">Objectives:</h4>
+                            <ul>
+                                <li class="Experiences-list">Projects: <em>Michelle</em> (Top 10 Scream Secrets 2024), <em>Plate Pals</em> (Micro-Jam: Food 2025).</li>
+                                <li class="Experiences-list">Built dynamic systems including narrative-driven event triggers for psychological horror and order-management quotas for simulation games.</li>
+                                <li class="Experiences-list">Developed highly-rated 2D pixel art games from scratch using Godot and GDScript under extreme time constraints.</li>
+                            </ul>
+                            
+                            <div class="quest-rewards">
+                                <span class="reward-title">Experience Gained:</span>
+                                <div class="reward-badges">
+                                    <span class="loot-badge">GDScript</span>
+                                    <span class="loot-badge">Godot Engine</span>
+                                    <span class="loot-badge">2D Pixel Physics</span>
+                                    <span class="loot-badge">Dialogue Event Triggers</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="Skills-border">
-            <div class="Skills-main">
-                <span class="Skills-title">Skills</span>
-                <hr>
-                <div class="Skills-list">
-                    <ol class="Skills-ol">
-                        <li><img src="Assets/images/UnityIcon.png" class="li-img"></li>
-                        <li><img src="Assets/images/GodotIcon.png" class="li-img"></li>
-                    </ol>
-                    <br>
-                    <ol class="Skills-ol">
-                        <li><img src="Assets/images/HTMLicon.png" class="li-img"></li>
-                        <li><img src="Assets/images/CSSIcon.png" class="li-img"></li>
-                    </ol>
-                    <br>
-                    <ol class="Skills-ol">
-                        <li><img src="Assets/images/APPIcon.png" class="li-img"></li>
-                        <li><img src="Assets/images/AsepriteIcon.png" class="li-img"></li>
-                    </ol>
-                    <ol class="Skills-ol">
-                        <li><img src="Assets/images/Figma.png" class="li-img"></li>
-                        <li><img src="Assets/images/Canva.png" class="li-img"></li>
-                    </ol>
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
-    
-    <hr>
-
-    <div class="main-second">
-        <div class="Introduction-border">
-            <div class="Introduction-title-border">
-                <img src="Assets/images/ProfessionalPic.png">
-                <div class="Introduction-title">
-                    <span class="Introduction-name">Eugene F. Flores II</span>
-                    <span class="Introduction-role">Game Developer and Programmer</span>
-                     <span class="Introduction-quote">"You drown not by falling into the river, but by staying submerged in it."</span>
-                </div>
-            </div>
-            <hr>
-            <div class="Introduction-text">
-                <p>Hey, I'm Eugene. As a Game Developer/Programmer, I turn creative design into reality through clean,
-                     scalable code. Whether I'm building core gameplay mechanics, wiring up UI, or tackling multiplayer basics, 
-                     I focus on building systems that work. My background as a player allows me to anticipate user needs, while my dedication to playtesting, debugging, and edge-case analysis ensures the mechanics I develop are polished, optimized, and reliable. </p>
-            </div>
-        </div>
-
-        <div class="Showcase-border">
-            <div class="Showcase-title-border">
-                <div class="Showcase-title">
-                    <span class="Showcase-name">Capabilities</span>
-                </div>
-            </div>
-            <hr>
-            <div class="Showcase-list-holder">
-                <ul class="Showcase-list">
-                    <li>C# Unity Developer</li>
-                    <li>GDScript Godot Developer</li>
-                    <li>QA Game Tester</li>
-                    <li>UI/UX Design</li>
-                    <li>Video Editor</li>
-                    <li>Story Writer</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-    <hr>
-     <div class="main-third">
-            <div class="Projects-border" id="Game-projects">
+        <!-- SECTION 4: GAME PROJECTS WITH FILTERS -->
+        <section id="game-projects" class="main-section">
+            <h2 class="section-title"><span class="title-decor">🎮</span> GAME PROJECTS <span class="title-decor">🎮</span></h2>
+            
+            <div class="Projects-border">
                 <div class="Project-title">
-                    <span class="project-name">Game Projects</span>
+                    <span class="project-name">EQUIPPED CAMPAIGNS & RELEASES</span>
+                    <!-- Retro Filter Tabs -->
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="unity">Unity</button>
+                        <button class="filter-btn" data-filter="godot">Godot</button>
+                        <button class="filter-btn" data-filter="jam">Game Jams</button>
+                        <button class="filter-btn" data-filter="professional">Professional</button>
+                    </div>
                 </div>
-                <hr>
+                <hr class="panel-divider">
+                
                 <div class="Projects-border-list">
                     <ol>
-                        <li class="Projects-list">
+                        <!-- Project 1: Fruited to Fight -->
+                        <li class="Projects-list" data-tags="unity,jam">
                             <img src="Assets/images/Fruited to Fight GDD.png" alt="Fruited to Fight logo preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Fruited to Fight(Ongoing), Unity C# Programmer</span>
-                                <p>Fruited to Fight is a fast-paced 2D roguelite mobile game where fruit fighters battle through rotted lands filled with relentless enemies, wild upgrades, and unpredictable runs. Fresh from earning 2nd Place Judges’ Pick at the Pixel Forge Jam 2026  </p>
+                                <span class="project-description-name">Fruited to Fight (Ongoing)</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                    <span class="tag-badge jam">Pixel Forge Jam</span>
+                                </div>
+                                <p>Fruited to Fight is a fast-paced 2D roguelite mobile game where fruit fighters battle through rotted lands filled with relentless enemies, wild upgrades, and unpredictable runs. Fresh from earning 2nd Place Judges’ Pick at the Pixel Forge Jam 2026.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 2: Langit Lupa -->
+                        <li class="Projects-list" data-tags="unity,professional">
                             <img src="Assets/images/LangitLupa.png" alt="Langit Lupa logo preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Langit Lupa (NinetySix Studio), Unity C# Programmer</span>
-                                <p>Langit lupa is a party game in steam that was publish and made by NinetySix Studio, During my internship at NinetySix Studio, I played a key role in the development of the Steam-published party game, Langit Lupa. This experience allowed me to deepen my mastery of C# and Unity within a professional pipeline. Working closely with the development team, I focused on building robust gameplay systems and refining user mechanics, prioritizing clean code practices and comprehensive documentation to support the project's long-term scalability.</p>
+                                <span class="project-description-name">Langit Lupa (NinetySix Studio)</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                    <span class="tag-badge professional">Steam Release</span>
+                                </div>
+                                <p>Langit Lupa is a party game on Steam made by NinetySix Studio. During my internship, I played a key role in its development. I focused on building robust gameplay systems and refining user mechanics, prioritizing clean code practices and comprehensive documentation to support the project's long-term scalability.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 3: Fruited to Return -->
+                        <li class="Projects-list" data-tags="unity,jam">
                             <img src="Assets/images/gifs/FruitedToReturn.gif" alt="Fruited to Return gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Fruited to Return, Unity C# Programmer</span>
-                                <p>Fruited to return is a 2D precision platformer with a Roguelite feature. A journey of a mango that is brought to an unknown world to save his avocado wife. This game was a submission to a game jam called thatgamejam #01, which gave me a lot of insight in the game and how to improve it.</p>
+                                <span class="project-description-name">Fruited to Return</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                    <span class="tag-badge jam">Game Jam #01</span>
+                                </div>
+                                <p>Fruited to Return is a 2D precision platformer with a Roguelite feature. A journey of a mango that is brought to an unknown world to save his avocado wife. This game was a submission to a game jam called thatgamejam #01, which gave me a lot of insight in the game and how to improve it.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 4: M2VEX FMV Tour -->
+                        <li class="Projects-list" data-tags="unity,professional">
                             <img src="Assets/images/gifs/M2VEX.gif" alt="M2VEX gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">M2VEX (FMV School Tour), Unity C# Programmer</span>
-                                <p>M2VEX is a virtual campus exploration game designed to provide immersive and informative walkthrough of Mapúa Malayan Colleges Mindanao (MMCM). Set within a full-motion video (FMV) interface, the game enables users to navigate the campus environment while being guided by a virtual avatar who offers context, directions, and key insights along the way.</p>
+                                <span class="project-description-name">M2VEX (FMV School Tour)</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                    <span class="tag-badge professional">Client Work</span>
+                                </div>
+                                <p>M2VEX is a virtual campus exploration game designed to provide immersive and informative walkthrough of Mapúa Malayan Colleges Mindanao (MMCM). Set within a full-motion video (FMV) interface, the game enables users to navigate the campus environment while being guided by a virtual avatar.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 5: Cat Connect -->
+                        <li class="Projects-list" data-tags="unity">
                             <img src="Assets/images/gifs/CatConnect.gif" alt="CatConnect gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Cat Connect, Unity C# Programmer</span>
-                                <p>A 32x32 2D pixel cozy game which main goal of Cat Connect is to maintain and grow your cafe's satisfaction level. The player must prevent the cafe’s satisfaction from dropping to zero once it does, the game ends. To keep the cafe thriving, players must carefully manage resources, upgrade equipment, and build new furniture to improve both customer experience and the cafe’s efficiency. .</p>
+                                <span class="project-description-name">Cat Connect</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                </div>
+                                <p>A 32x32 2D pixel cozy game where the main goal is to maintain and grow your cafe's satisfaction level. The player must prevent the cafe’s satisfaction from dropping to zero. To keep the cafe thriving, players manage resources, upgrade equipment, and build new furniture to improve both customer experience and efficiency.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 6: Michelle -->
+                        <li class="Projects-list" data-tags="godot,jam">
                             <img src="Assets/images/gifs/Michelle.gif" alt="Michelle gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Michelle, GDScript Godot Programmer</span>
-                                <p>A 32x32 2D pixel horror that represents the story of Michelle, A kind hearted child who one day suddenly became ill. An illness that made her paranoid schizophrenic. This horror game that was awarded as one of the top 10 in the Scream Secrets 2024 game jam. </p>
+                                <span class="project-description-name">Michelle</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge godot">Godot GDScript</span>
+                                    <span class="tag-badge jam">Top 10 Scream Secrets</span>
+                                </div>
+                                <p>A 32x32 2D pixel horror game that represents the story of Michelle, a kind-hearted child who suddenly became paranoid schizophrenic. This horror game was awarded as one of the top 10 in the Scream Secrets 2024 game jam.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
-                             <img src="Assets/images/gifs/PlatePals.gif" alt="Plate pals gameplay preview">
+
+                        <!-- Project 7: Plate Pals -->
+                        <li class="Projects-list" data-tags="godot,jam">
+                            <img src="Assets/images/gifs/PlatePals.gif" alt="Plate pals gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Plate Pals, GDScript Godot Programmer</span>
-                                <p>A 32x32 2D pixel art game inspired by the old Diner Dash games. Its a order and delivery game that the player needs to reach a certain quota. This is a game jam entry for the Micro-Jam: Food 2025 which is placed 26th.</p>
+                                <span class="project-description-name">Plate Pals</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge godot">Godot GDScript</span>
+                                    <span class="tag-badge jam">Micro-Jam: Food</span>
+                                </div>
+                                <p>A 32x32 2D pixel art game inspired by Diner Dash games. It is an order and delivery game where the player needs to reach a certain quota. This is a game jam entry for the Micro-Jam: Food 2025 which placed 26th.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 8: Frigg's Grill n Thrill -->
+                        <li class="Projects-list" data-tags="unity,jam">
                             <img src="Assets/images/gifs/FriggsGrillnThrill.gif" alt="Friggs grill and thrill gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Frigg's Grill n Thrill, Unity C# Programmer</span>
-                                <p>Welcome New Employee! You are given the chance to change your life if you work hard on Frigg's Grill N Thrill. Please follow protocols and respect the rules.... or else. This game is submitted in the Scream Jam 2024 game jam which was placed top 30. </p>
+                                <span class="project-description-name">Frigg's Grill n Thrill</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                    <span class="tag-badge jam">Top 30 Scream Jam</span>
+                                </div>
+                                <p>Welcome New Employee! You are given the chance to change your life if you work hard on Frigg's Grill N Thrill. Please follow protocols and respect the rules.... or else. This game is submitted in the Scream Jam 2024 game jam which was placed top 30.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 9: Sherlock Science -->
+                        <li class="Projects-list" data-tags="unity">
                             <img src="Assets/images/SherlockScience.png" alt="SherlockScience gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Sherlock Science, Unity C# Programmer</span>
-                                <p>A 2D game for kids, It is an educational point and click game where the player finds a certain item that is needed for the objective. After finding the objective, a definition of the item will be shown and explains its uses.</p>
+                                <span class="project-description-name">Sherlock Science</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                    <span class="tag-badge">Educational</span>
+                                </div>
+                                <p>A 2D game for kids. It is an educational point-and-click game where the player finds a certain item that is needed for the objective. After finding the objective, a definition of the item is shown to explain its uses.</p>
                             </div>
                         </li>
-                        <li class="Projects-list">
+
+                        <!-- Project 10: Blacksmith -->
+                        <li class="Projects-list" data-tags="unity">
                             <img src="Assets/images/Blacksmith.png" alt="Blacksmith gameplay preview">
                             <div class="Project-description">
-                                <span class="project-description-name">Blacksmith, Unity C# Programmer</span>
+                                <span class="project-description-name">Blacksmith Shop Simulation</span>
+                                <div class="project-badges">
+                                    <span class="engine-badge unity">Unity C#</span>
+                                </div>
                                 <p>A simulation game where you manage a blacksmith shop. Smelt ores, craft different arrays of weapons, satisfy your customers, and earn money to buy more resources and upgrades.</p>
                             </div>
                         </li>
                     </ol>
                 </div>
             </div>
+        </section>
 
-        </div>
-        <hr>
-        <div class="main-third">
-            <div class="Projects-border" id="Game-projects">
-                <div class="Project-title">
-                    <span class="project-name">Accomplishments</span>
-                </div>
-                <hr>
-                <div class="Projects-border-list">
-                    <ol>
-                        <li class="Projects-list">
-                            <img src="Assets/images/Certificate_of_Achievement_Pixel_Forge_Jam_2026_1.png" alt="Chronigma logo preview">
-                            <div class="Project-description">
-                                <span class="project-description-name">Pixel Forge Jam 2026, 2nd Place</span>
-                                <p>Pixel Forge is a 1-week game jam where developers, artists, designers, and creators come together to build something awesome. We had 7 days to create a game from scratch, experiment with ideas, and turn creativity into playable projects. We presented Fruited to Fight and accomplished 2nd place in Judge's pick</p>
+        <!-- SECTION 5: UNLOCKED ACCOMPLISHMENTS -->
+        <section id="accomplishments" class="main-section">
+            <h2 class="section-title"><span class="title-decor">🏆</span> TROPHIES & ACHIEVEMENTS <span class="title-decor">🏆</span></h2>
+            
+            <div class="rpg-panel achievements-panel">
+                <div class="Achievements-list">
+                    <div class="achievement-card">
+                        <img src="Assets/images/Certificate_of_Achievement_Pixel_Forge_Jam_2026_1.png" alt="Pixel Forge Jam Certificate" class="achievement-img">
+                        <div class="achievement-info">
+                            <div class="achievement-meta">
+                                <span class="badge bronze">🥈 2nd Place</span>
+                                <span class="achievement-stars">⭐⭐⭐⭐⭐</span>
                             </div>
-                        </li>
-                        <li class="Projects-list">
-                            <img src="Assets/images/Chronigma.jpg" alt="Chronigma logo preview">
-                            <div class="Project-description">
-                                <span class="project-description-name">Chronigma QA, Upwork (5 stars)</span>
-                                <p>The goal of this job was to provide a QA test on this game on steam. While doing so, I created a full docx file and excel file that shows details on the player experience within the first 3 hours. I was detail-oriented and does not sugarcoat the experiences that I have within the application.</p>
+                            <h4 class="achievement-title">Pixel Forge Jam 2026</h4>
+                            <p class="achievement-desc">Pixel Forge is a 1-week game jam where developers create a game from scratch. We presented <em>Fruited to Fight</em> and accomplished 2nd place in Judge's pick out of numerous competitors.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <img src="Assets/images/Chronigma.jpg" alt="Chronigma Logo" class="achievement-img">
+                        <div class="achievement-info">
+                            <div class="achievement-meta">
+                                <span class="badge gold">⭐ Upwork QA</span>
+                                <span class="achievement-stars">⭐⭐⭐⭐⭐ (5.0)</span>
                             </div>
-                        </li>
-                        <li class="Projects-list">
-                            <div class="Project-description">
-                                <span class="project-description-name">Not So Legal Internet Cafe, Upwork (5 stars)</span>
-                                <p>The goal of this job was to create a prototype for a Europe-based studio. I handled it great and finished the prototype within 7 days. the client was happy with my work and stated that among the 5 developers, I was the best.</p>
-                        </li>
-                    </ol>
+                            <h4 class="achievement-title">Chronigma QA Testing</h4>
+                            <p class="achievement-desc">Provided thorough gameplay testing on Steam for Chronigma. Created a full user experience report and bug spreadsheet detailing game mechanics within the first 3 hours. Provided highly critical, useful feedback.</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement-card">
+                        <div class="achievement-placeholder-icon">🕹️</div>
+                        <div class="achievement-info">
+                            <div class="achievement-meta">
+                                <span class="badge gold">⭐ Upwork Dev</span>
+                                <span class="achievement-stars">⭐⭐⭐⭐⭐ (5.0)</span>
+                            </div>
+                            <h4 class="achievement-title">Not So Legal Internet Cafe</h4>
+                            <p class="achievement-desc">Created a detailed gameplay prototype for a Europe-based studio within 7 days. The client was happy with my work and stated that among the 5 developers, I was the best.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-        </div>
-
-        <div class="main-fourth">
-            <div class="Play-border">
-                <span class="Play-title">Interested? Play my games!</span>
-                <br>
-                <div class="Play-game-button-list">
-                    <img src="Assets/images/ItchioIcon.png" alt="itch.io icon">
-                    <a href="https://huge-games.itch.io/" target="_blank"><button class="Play-game-button">Play my games on Itch.io</button></a>
+        <!-- SECTION 6: BOSS FIGHT (PLAY ON ITCH.IO) -->
+        <section id="boss-fight" class="main-section text-center">
+            <div class="rpg-panel boss-panel">
+                <span class="boss-level">FINAL LEVEL // BOSS BATTLE</span>
+                <h3 class="Play-title">READY TO PLAY? INSERT COIN!</h3>
+                <p class="boss-desc">Test my mechanics firsthand. Run, jump, and fight through my live game jam creations.</p>
+                <div class="Play-game-button-list justify-center">
+                    <img src="Assets/images/ItchioIcon.png" alt="itch.io logo" class="retro-shake">
+                    <a href="https://huge-games.itch.io/" target="_blank">
+                        <button class="Play-game-button">Play Games on Itch.io</button>
+                    </a>
                 </div>
             </div>
-
-         </div>
-
+        </section>
     </main>
 
     <footer>
-        <hr>
+        <hr class="rpg-divider">
         <div class="footer-content">
             <div class="footer-left">
                 <div class="footer-icons">
@@ -309,9 +583,17 @@ deadlines.
                 <a href="mailto:eFloresii@outlook.com" class="footer-email-link">eFloresii@outlook.com</a>
             </div>
 
+            <div class="footer-meta">
+                <span>VER: 1.0.4 // © 2026</span>
+            </div>
+
             <a href="docs/Resume.pdf" class="footer-resume-link" download>Download Resume</a>
         </div>
     </footer>
+
+    <!-- Scripts -->
+    <script src="Scripts/JS/retro-audio.js"></script>
+    <script src="Scripts/JS/project-filters.js"></script>
     <script src="Scripts/JS/projects-scroll.js"></script>
 </body>
 </html>

@@ -14,7 +14,9 @@
     }
 
     function applyProjectListHeight() {
-        const projects = container.querySelectorAll(".Projects-list");
+        const projects = Array.from(container.querySelectorAll(".Projects-list")).filter(el => {
+            return window.getComputedStyle(el).display !== "none";
+        });
 
         if (projects.length === 0) {
             container.style.maxHeight = "";
