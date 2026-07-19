@@ -1,0 +1,6 @@
+# Graphify Knowledge Graph outputs
+graphify-out/
+
+# OS specific files
+.DS_Store
+Thumbs.db
