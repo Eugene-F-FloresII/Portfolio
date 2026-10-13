@@ -31,10 +31,12 @@
     --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
     --font-code: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
     --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 0 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 4px 16px rgba(28, 28, 28, 0.08);
     --content-width: 1240px;
     --radius-control: 6px;
     --radius-compact: 8px;
     --radius-card: 12px;
+    --radius-pill: 999px;
     --motion-fast: 150ms;
     --motion-standard: 240ms;
     --motion-ease: cubic-bezier(0.2, 0, 0, 1);
@@ -322,8 +324,76 @@ img {
     background: var(--color-surface);
 }
 
-.hero-feature {
+.hero-feature,
+.hero-project-carousel {
     min-width: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-project-slides {
+    position: relative;
+    width: 100%;
+}
+
+.hero-project-slide {
+    width: 100%;
+    animation: fadeInSlide 0.35s ease-in-out;
+}
+
+.hero-project-slide .feature-body {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-project-slide .feature-body .body-copy {
+    flex: 1 1 auto;
+}
+
+.hero-project-slide[hidden] {
+    display: none;
+}
+
+.hero-project-controls {
+    padding: 0 28px 24px;
+    max-width: 100%;
+}
+
+.hero-project-controls .carousel-indicators {
+    gap: 6px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.hero-project-controls .carousel-indicator {
+    min-width: 12px;
+    width: 12px;
+    height: 12px;
+    min-height: 12px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--color-border-strong);
+    background: transparent;
+    transition: all 0.25s ease;
+}
+
+.hero-project-controls .carousel-indicator[aria-current="true"] {
+    width: 26px;
+    border-radius: 999px;
+    background: var(--color-charcoal);
+    border-color: var(--color-charcoal);
+}
+
+@keyframes fadeInSlide {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .feature-art-link {
@@ -784,6 +854,36 @@ img {
     letter-spacing: 0.08em;
 }
 
+.role-scroll-pane {
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-strong) transparent;
+}
+
+.role-scroll-pane::-webkit-scrollbar {
+    width: 6px;
+}
+
+.role-scroll-pane::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.role-scroll-pane::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 999px;
+}
+
+.role-scroll-pane::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
+}
+
+.role-scroll-pane:focus-visible {
+    outline: 2px solid var(--color-charcoal);
+    outline-offset: 2px;
+}
+
 .role-list,
 .client-work-list {
     border-top: 1px solid var(--color-border-list);
@@ -993,6 +1093,96 @@ img {
     object-fit: contain;
 }
 
+/* Skills & Tools Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    padding: 22px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.skill-card:hover {
+    border-color: var(--color-charcoal);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+}
+
+.skill-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.skill-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.skill-multi-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.skill-multi-icons .skill-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.skill-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-pill);
+    background: var(--color-charcoal);
+    color: var(--color-surface);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+}
+
+.skill-icon-ai {
+    font-size: 14px;
+}
+
+.skill-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.25;
+}
+
+.skill-category {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: var(--color-muted);
+}
+
+.skill-card > .body-copy {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--color-charcoal);
+}
+
 .contact-section {
     padding-bottom: 72px;
 }
@@ -1024,23 +1214,26 @@ img {
     font-size: 16px;
 }
 
-.contact-copy > .button {
-    margin-top: 18px;
-}
-
 .contact-details {
     display: flex;
     flex: 0 0 auto;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 14px;
 }
 
-.resume-link {
-    display: inline-flex;
-    min-height: 40px;
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 7px;
+    gap: 12px;
+}
+
+.button-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
 }
 
 .site-footer {
@@ -1060,6 +1253,23 @@ img {
 
 .footer-inner p {
     margin: 0;
+}
+
+.footer-divider {
+    margin: 0 6px;
+    color: var(--color-border-strong);
+}
+
+.footer-email-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-strong);
+    text-underline-offset: 4px;
+    transition: color 0.15s ease;
+}
+
+.footer-email-link:hover {
+    color: var(--color-charcoal);
 }
 
 .footer-links {
@@ -1098,6 +1308,10 @@ img {
 
     .feature-body {
         padding: 20px;
+    }
+
+    .hero-project-controls {
+        padding: 0 20px 20px;
     }
 
     .spotlight-grid {
@@ -1176,7 +1390,8 @@ img {
         padding-block: 34px 48px;
     }
 
-    .hero-feature {
+    .hero-feature,
+    .hero-project-carousel {
         order: -1;
     }
 
@@ -1195,6 +1410,16 @@ img {
 
     .feature-body {
         padding: 18px;
+    }
+
+    .hero-project-controls {
+        padding: 0 18px 20px;
+    }
+
+    .role-scroll-pane {
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
     }
 
     .feature-title {
@@ -1310,6 +1535,10 @@ img {
         flex-direction: column;
         padding-block: 20px;
     }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -1323,6 +1552,10 @@ img {
 
     .feature-body {
         padding: 16px;
+    }
+
+    .hero-project-controls {
+        padding: 0 16px 18px;
     }
 
     .spotlight-body {
@@ -1369,6 +1602,10 @@ img {
 
     .award-title {
         font-size: 23px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
 

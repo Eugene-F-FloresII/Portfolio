@@ -24,6 +24,7 @@
                     <a href="#projects">All projects</a>
                     <a href="#experience">Experience</a>
                     <a href="#recognition">Recognition</a>
+                    <a href="#about">About Me</a>
                     <a class="button button-primary nav-resume" href="docs/Flores_Resume.pdf" download>Download résumé</a>
                 </div>
                 <button class="mobile-menu" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Open navigation">
@@ -37,14 +38,14 @@
                 <div class="hero-copy">
                     <p class="eyebrow code-text">EUGENE F. FLORES II</p>
                     <h1 class="display hero-title" id="hero-title">Game Developer &amp; Programmer</h1>
-                    <p class="hero-summary">I build player-facing mechanics and gameplay systems across Unity and Godot. My work spans a released team game, a campus-tour experience, and independent projects.</p>
+                    <p class="hero-summary">I craft engaging, responsive games and interactive experiences across Unity and Godot. My work spans commercial releases, client projects, and award-winning jam titles.</p>
 
                     <div class="role-carousel" id="hero-role-carousel" role="region" aria-label="Experience highlights" aria-roledescription="carousel" data-source="#experience-entries" data-interval="7000">
                         <div class="role-slides" id="hero-role-slides" aria-live="off"></div>
                         <div class="carousel-controls-row">
                             <div class="carousel-indicators" id="hero-role-indicators" role="group" aria-label="Choose an experience highlight"></div>
                             <div class="carousel-navigation">
-                                <span class="code-text slide-count" id="hero-role-count" aria-hidden="true">1 / 4</span>
+                                <span class="code-text slide-count" id="hero-role-count" aria-hidden="true">1 / 5</span>
                                 <button class="carousel-control" type="button" data-carousel-action="previous" aria-label="Show previous experience">←</button>
                                 <button class="carousel-control" type="button" data-carousel-action="next" aria-label="Show next experience">→</button>
                                 <button class="carousel-control carousel-toggle" type="button" data-carousel-action="toggle" aria-label="Pause experience highlights" aria-pressed="false">Pause</button>
@@ -59,20 +60,34 @@
                     </div>
                 </div>
 
-                <article class="hero-feature card-surface">
-                    <a class="feature-art-link" href="https://store.steampowered.com/app/3428410/Langit_Lupa_Office_Wars/" target="_blank" rel="noopener noreferrer" aria-label="View Langit Lupa: Office Wars on Steam">
-                        <img class="feature-art" src="Assets/images/LangitLupa.png" alt="Langit Lupa: Office Wars game artwork" fetchpriority="high" decoding="async">
-                    </a>
-                    <div class="feature-body">
-                        <div class="meta-row">
-                            <p class="eyebrow code-text">SHIPPED TEAM GAME</p>
-                            <span class="metadata">Unity · C#</span>
-                        </div>
-                        <h2 class="display feature-title">Langit Lupa: Office Wars</h2>
-                        <p class="body-copy">Released on Steam with NinetySix Studios. I programmed core player interactions and gameplay systems, and documented the work to support team workflows.</p>
-                        <a class="text-link" href="https://store.steampowered.com/app/3428410/Langit_Lupa_Office_Wars/" target="_blank" rel="noopener noreferrer">View Langit Lupa on Steam <span aria-hidden="true">↗</span></a>
+                <div class="hero-project-carousel card-surface" id="hero-project-carousel" role="region" aria-label="Featured projects slideshow" aria-roledescription="carousel" data-source="#project-index" data-interval="6000">
+                    <div class="hero-project-slides" id="hero-project-slides" aria-live="off">
+                        <article class="hero-project-slide" data-active="true">
+                            <a class="feature-art-link" href="https://huge-games.itch.io/fruited-to-fight" target="_blank" rel="noopener noreferrer" aria-label="Play Fruited to Fight on itch.io">
+                                <img class="feature-art" src="Assets/images/Fruited to Fight GDD.png" alt="Fruited to Fight art" fetchpriority="high" decoding="async">
+                            </a>
+                            <div class="feature-body">
+                                <div class="meta-row">
+                                    <p class="eyebrow code-text">AWARDED JAM PROJECT</p>
+                                    <span class="metadata">Unity</span>
+                                </div>
+                                <h2 class="display feature-title">Fruited to Fight</h2>
+                                <p class="body-copy">2D roguelite; 2nd Place Judges’ Pick, Pixel Forge Jam 2026.</p>
+                                <a class="text-link" href="https://huge-games.itch.io/fruited-to-fight" target="_blank" rel="noopener noreferrer">Play on itch.io <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </article>
                     </div>
-                </article>
+                    <div class="carousel-controls-row hero-project-controls">
+                        <div class="carousel-indicators" id="hero-project-indicators" role="group" aria-label="Choose a project"></div>
+                        <div class="carousel-navigation">
+                            <span class="code-text slide-count" id="hero-project-count" aria-hidden="true">1 / 10</span>
+                            <button class="carousel-control" type="button" data-carousel-action="previous" aria-label="Show previous project">←</button>
+                            <button class="carousel-control" type="button" data-carousel-action="next" aria-label="Show next project">→</button>
+                            <button class="carousel-control carousel-toggle" type="button" data-carousel-action="toggle" aria-label="Pause projects slideshow" aria-pressed="false">Pause</button>
+                        </div>
+                    </div>
+                    <p class="visually-hidden" id="hero-project-announcement" aria-live="polite" aria-atomic="true"></p>
+                </div>
             </section>
 
             <section class="page-section section-ruled" id="work" aria-labelledby="work-title">
@@ -101,10 +116,10 @@
                     <article class="spotlight-card card-surface">
                         <img class="spotlight-art spotlight-art-secondary" src="Assets/images/gifs/M2VEX.gif" alt="Gameplay capture from the M2VEX virtual campus tour" loading="lazy" decoding="async">
                         <div class="spotlight-body">
-                            <p class="eyebrow code-text">SOLO CLIENT PROJECT</p>
+                            <p class="eyebrow code-text">THESIS RESEARCH · SOLO CLIENT PROJECT</p>
                             <h3 class="display card-title spotlight-secondary-title">M2VEX virtual campus tour</h3>
                             <p class="body-copy">A campus walkthrough built with Full-Motion Video navigation. I developed the FMV playback logic, UI navigation, and path-selection nodes for MMCM.</p>
-                            <p class="link-note">No individual project page could be verified. <a class="text-link" href="https://huge-games.itch.io/" target="_blank" rel="noopener noreferrer">See HuGe’s itch.io profile</a></p>
+                            <a class="text-link" href="https://huge-games.itch.io/" target="_blank" rel="noopener noreferrer">See HuGe’s itch.io profile <span aria-hidden="true">↗</span></a>
                         </div>
                     </article>
                 </div>
@@ -167,9 +182,9 @@
                         <p class="body-copy">2D precision platformer with roguelite elements, built in 48 hours.</p>
                         <a class="text-link" href="https://huge-games.itch.io/fruited-to-return" target="_blank" rel="noopener noreferrer">Play on itch.io <span aria-hidden="true">↗</span></a>
                     </article>
-                    <article class="project-entry" data-tags="unity,professional">
+                    <article class="project-entry" data-tags="unity,professional,thesis">
                         <img src="Assets/images/gifs/M2VEX.gif" alt="M2VEX campus tour capture" loading="lazy" decoding="async">
-                        <p class="metadata">Unity · Client project</p>
+                        <p class="metadata">Unity · Client project · Thesis research</p>
                         <h3 class="display project-title">M2VEX Virtual Campus Tour</h3>
                         <p class="body-copy">FMV playback, UI navigation and campus path selection for MMCM.</p>
                         <a class="text-link" href="https://huge-games.itch.io/" target="_blank" rel="noopener noreferrer">See HuGe’s itch.io profile <span aria-hidden="true">↗</span></a>
@@ -228,53 +243,68 @@
                 <div class="roles-grid" id="experience-entries">
                     <div class="role-column">
                         <h3 class="eyebrow code-text column-label">PAID &amp; CLIENT WORK</h3>
-                        <div class="role-list">
-                            <article class="role-entry">
-                                <div class="role-heading-row">
-                                    <h4 class="display role-title">C# Unity Programmer · Freelance</h4>
-                                    <span class="role-date">2025–Present</span>
-                                </div>
-                                <p class="role-organization">NinetySix Studios</p>
-                                <ul class="role-responsibilities">
-                                    <li>Co-developed core gameplay mechanics with modular C# systems.</li>
-                                    <li>Applied Observer and Factory patterns, Scriptable Objects and reflection-based editor tooling.</li>
-                                </ul>
-                                <p class="related-release">Related release: <a class="text-link" href="https://store.steampowered.com/app/3428410/Langit_Lupa_Office_Wars/" target="_blank" rel="noopener noreferrer">Langit Lupa: Office Wars on Steam</a></p>
-                            </article>
-                            <article class="role-entry">
-                                <div class="role-heading-row">
-                                    <h4 class="display role-title">Solo game developer</h4>
-                                    <span class="role-date">2024</span>
-                                </div>
-                                <p class="role-organization">Mapúa Malayan Colleges Mindanao</p>
-                                <p class="body-copy">Developed M2VEX, an interactive virtual campus tour using Full-Motion Video, UI navigation and path-selection nodes.</p>
-                            </article>
+                        <div class="role-scroll-pane" tabindex="0" role="region" aria-label="Paid and client work history">
+                            <div class="role-list">
+                                <article class="role-entry">
+                                    <div class="role-heading-row">
+                                        <h4 class="display role-title">AI-Assisted Game Developer</h4>
+                                        <span class="role-date">2026–Present</span>
+                                    </div>
+                                    <p class="role-organization">Versassist</p>
+                                    <ul class="role-responsibilities">
+                                        <li>C# game development leveraging AI-accelerated workflows with Antigravity, MeshyAI, and Claude.</li>
+                                        <li>Engineered core game systems end-to-end, built responsive UI, and developed accurate 3D game animations.</li>
+                                    </ul>
+                                </article>
+                                <article class="role-entry">
+                                    <div class="role-heading-row">
+                                        <h4 class="display role-title">C# Unity Programmer · Freelance</h4>
+                                        <span class="role-date">2025–Present</span>
+                                    </div>
+                                    <p class="role-organization">NinetySix Studios</p>
+                                    <ul class="role-responsibilities">
+                                        <li>Co-developed core gameplay mechanics with modular C# systems.</li>
+                                        <li>Applied Observer and Factory patterns, Scriptable Objects and reflection-based editor tooling.</li>
+                                    </ul>
+                                    <p class="related-release">Related release: <a class="text-link" href="https://store.steampowered.com/app/3428410/Langit_Lupa_Office_Wars/" target="_blank" rel="noopener noreferrer">Langit Lupa: Office Wars on Steam</a></p>
+                                </article>
+                            </div>
                         </div>
                     </div>
                     <div class="role-column">
                         <h3 class="eyebrow code-text column-label">INDEPENDENT GAMES &amp; JAMS</h3>
-                        <div class="role-list">
-                            <article class="role-entry">
-                                <div class="role-heading-row">
-                                    <h4 class="display role-title">Unity gameplay prototyping</h4>
-                                    <span class="role-date">Ongoing</span>
-                                </div>
-                                <p class="role-organization">C# · Game jams</p>
-                                <p class="body-copy">Prototyped mechanics in 48–72 hour jams, then tested and tuned controls, physics and UI for projects including <em>Fruited to Return</em> and <em>Frigg’s Grill n Thrill</em>.</p>
-                            </article>
-                            <article class="role-entry">
-                                <div class="role-heading-row">
-                                    <h4 class="display role-title">Godot gameplay programming</h4>
-                                    <span class="role-date">Ongoing</span>
-                                </div>
-                                <p class="role-organization">GDScript · Independent game jams</p>
-                                <p class="body-copy">Built 2D mechanics, event triggers and dialogue interactions for projects including <em>Michelle</em> and <em>Plate Pals</em>.</p>
-                            </article>
-                        </div>
-                        <div class="tools-card">
-                            <h4 class="display card-title">Gameplay tools</h4>
-                            <p class="body-copy">C# and Unity · GDScript and Godot · Scriptable Objects · FMV playback · UI navigation · Aseprite · Figma</p>
-                            <p class="metadata">Shown through the projects above; no self-rated proficiency scores.</p>
+                        <div class="role-scroll-pane" tabindex="0" role="region" aria-label="Independent games and jams history">
+                            <div class="role-list">
+                                <article class="role-entry">
+                                    <div class="role-heading-row">
+                                        <h4 class="display role-title">C# Unity Developer</h4>
+                                        <span class="role-date">2024</span>
+                                    </div>
+                                    <p class="role-organization">Mapúa Malayan Colleges Mindanao</p>
+                                    <p class="body-copy">Developed M2VEX as a solo developer, an interactive virtual campus tour using Full-Motion Video, UI navigation, and path-selection nodes.</p>
+                                </article>
+                                <article class="role-entry">
+                                    <div class="role-heading-row">
+                                        <h4 class="display role-title">Unity C# for Game Jams</h4>
+                                        <span class="role-date">Ongoing</span>
+                                    </div>
+                                    <p class="role-organization">C# · Game jams</p>
+                                    <p class="body-copy">Prototyped mechanics in 48–72 hour jams, then tested and tuned controls, physics and UI for projects including <em>Fruited to Return</em> and <em>Frigg’s Grill n Thrill</em>.</p>
+                                </article>
+                                <article class="role-entry">
+                                    <div class="role-heading-row">
+                                        <h4 class="display role-title">Godot C# for Game Jams</h4>
+                                        <span class="role-date">Ongoing</span>
+                                    </div>
+                                    <p class="role-organization">C# &amp; GDScript · Independent game jams</p>
+                                    <p class="body-copy">Built 2D mechanics, event triggers and dialogue interactions for projects including <em>Michelle</em> and <em>Plate Pals</em>.</p>
+                                </article>
+                            </div>
+                            <div class="tools-card">
+                                <h4 class="display card-title">Gameplay tools</h4>
+                                <p class="body-copy">C# and Unity · GDScript and Godot · Scriptable Objects · FMV playback · UI navigation · Aseprite · Figma</p>
+                                <p class="metadata">Shown through the projects above; no self-rated proficiency scores.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -319,9 +349,9 @@
                 <div class="about-grid">
                     <img class="about-photo" src="Assets/images/FormalPic.png" alt="Eugene F. Flores II" loading="lazy" decoding="async">
                     <div class="about-copy">
-                        <h2 class="display section-title" id="about-title">About Eugene</h2>
-                        <p class="body-copy">I’m a gameplay programmer who works across Unity and Godot. I care about how mechanics feel to play and about the systems behind them: clear structure, careful testing and code that teammates can work with.</p>
-                        <p class="body-copy">I’ve contributed to a Steam release, developed a virtual campus tour as a solo project, and built jam games across genres from precision platformers to psychological horror.</p>
+                        <h2 class="display section-title" id="about-title">About Me</h2>
+                        <p class="body-copy">I’m a game developer passionate about creating games that feel satisfying to play and systems built to last. I focus on player experience, clear architecture, and reliable collaboration.</p>
+                        <p class="body-copy">From co-developing a commercial Steam release to leading solo client projects and building award-winning game jam titles, I create games across diverse genres, ranging from precision platformers to atmospheric psychological horror.</p>
                         <div class="social-links">
                             <a class="text-link social-link" href="https://github.com/Eugene-F-FloresII" target="_blank" rel="noopener noreferrer"><img src="Assets/images/GithubIcon.png" alt="" loading="lazy">GitHub</a>
                             <a class="text-link social-link" href="https://www.linkedin.com/in/eugenefloresii/" target="_blank" rel="noopener noreferrer"><img src="Assets/images/LinkedInIcon.png" alt="" loading="lazy">LinkedIn</a>
@@ -331,16 +361,111 @@
                 </div>
             </section>
 
+            <section class="page-section section-ruled" id="skills" aria-labelledby="skills-title">
+                <div class="section-heading">
+                    <p class="eyebrow code-text">TECHNICAL CAPABILITIES</p>
+                    <h2 class="display section-title" id="skills-title">Skills &amp; Tools</h2>
+                    <p class="section-intro">Core engines, programming languages, creative tooling, and AI-accelerated workflows applied across projects.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <img class="skill-icon" src="Assets/images/UnityIcon.png" alt="" width="28" height="28" loading="lazy">
+                            <div>
+                                <h3 class="display skill-title">Unity Engine</h3>
+                                <span class="skill-category code-text">Primary Game Engine</span>
+                            </div>
+                        </div>
+                        <p class="body-copy">C# gameplay systems, Scriptable Objects, physics tuning, UI navigation, and standalone/Steam builds.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <img class="skill-icon" src="Assets/images/GodotIcon.png" alt="" width="28" height="28" loading="lazy">
+                            <div>
+                                <h3 class="display skill-title">Godot Engine</h3>
+                                <span class="skill-category code-text">Game Engine</span>
+                            </div>
+                        </div>
+                        <p class="body-copy">C# and GDScript mechanics, 2D game loops, event triggers, dialogue systems, and rapid game jam prototypes.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-badge" aria-hidden="true">C#</div>
+                            <div>
+                                <h3 class="display skill-title">C# &amp; Architecture</h3>
+                                <span class="skill-category code-text">Core Programming</span>
+                            </div>
+                        </div>
+                        <p class="body-copy">Object-Oriented Programming, Observer and Factory design patterns, modular architectures, and custom editor tooling.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-multi-icons">
+                                <img class="skill-icon" src="Assets/images/Figma.png" alt="" width="24" height="24" loading="lazy">
+                                <img class="skill-icon" src="Assets/images/AsepriteIcon.png" alt="" width="24" height="24" loading="lazy">
+                            </div>
+                            <div>
+                                <h3 class="display skill-title">UI/UX &amp; 2D Art</h3>
+                                <span class="skill-category code-text">Creative Tooling</span>
+                            </div>
+                        </div>
+                        <p class="body-copy">User interface wireframing in Figma, responsive layout design, and pixel art sprites and frame animation in Aseprite.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon-badge skill-icon-ai" aria-hidden="true">✦</div>
+                            <div>
+                                <h3 class="display skill-title">AI-Assisted Workflows</h3>
+                                <span class="skill-category code-text">Modern Production</span>
+                            </div>
+                        </div>
+                        <p class="body-copy">Leveraging Antigravity, Claude, and MeshyAI to accelerate systems iteration, 3D asset generation, and game animations.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-card-header">
+                            <div class="skill-multi-icons">
+                                <img class="skill-icon" src="Assets/images/GithubIcon.png" alt="" width="24" height="24" loading="lazy">
+                                <img class="skill-icon" src="Assets/images/HTMLicon.png" alt="" width="24" height="24" loading="lazy">
+                            </div>
+                            <div>
+                                <h3 class="display skill-title">Version Control &amp; Web</h3>
+                                <span class="skill-category code-text">Workflow &amp; Web</span>
+                            </div>
+                        </div>
+                        <p class="body-copy">Git and GitHub version control, collaborative branch management, and semantic HTML5 &amp; modern responsive CSS.</p>
+                    </div>
+                </div>
+            </section>
+
             <section class="page-section section-ruled contact-section" id="contact" aria-labelledby="contact-title">
                 <div class="contact-card">
                     <div class="contact-copy">
                         <h2 class="display contact-title" id="contact-title">Let’s talk about the work.</h2>
                         <p class="body-copy">For gameplay programming, Unity and Godot roles, or project conversations.</p>
-                        <a class="button button-primary" href="mailto:eFloresii@outlook.com">Email Eugene <span aria-hidden="true">✉</span></a>
                     </div>
                     <div class="contact-details">
-                        <a class="text-link" href="mailto:eFloresii@outlook.com">eFloresii@outlook.com</a>
-                        <a class="text-link resume-link" href="docs/Flores_Resume.pdf" download><span aria-hidden="true">↓</span> Download résumé</a>
+                        <div class="contact-actions">
+                            <a class="button button-primary" href="mailto:eFloresii@outlook.com">
+                                <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                                </svg>
+                                <span>Email Eugene</span>
+                            </a>
+                            <a class="button button-secondary" href="docs/Flores_Resume.pdf" download>
+                                <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" x2="12" y1="15" y2="3"></line>
+                                </svg>
+                                <span>Download résumé</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -348,7 +473,7 @@
 
         <footer class="site-footer">
             <div class="footer-inner content-width">
-                <p>© 2026 Eugene F. Flores II</p>
+                <p>© 2026 Eugene F. Flores II <span class="footer-divider" aria-hidden="true">|</span> <a class="footer-email-link" href="mailto:eFloresii@outlook.com">eFloresii@outlook.com</a></p>
                 <div class="footer-links">
                     <a href="https://github.com/Eugene-F-FloresII" target="_blank" rel="noopener noreferrer">GitHub</a>
                     <a href="https://www.linkedin.com/in/eugenefloresii/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
